@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>용인분양 - 용인푸르지오</title>
+  <link rel="stylesheet" href="css/prugio_style.css" />
+  <link rel="stylesheet" as="style" onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      " href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  <script src="js/prugio.js" defer></script>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-back"><i class="ti ti-arrow-left"></i>전체 단지</a>
+    <!-- <div class="nav-center">
+      <a href="index.html">전체 단지</a>
+      <a href="#">분양 일정</a>
+      <a href="#">회사 소개</a>
+    </div> -->
+    <button class="nav-cta" onclick="scrollToContact()">상담 신청</button>
+  </nav>
+
+  <!-- SUB NAV -->
+  <div class="sub-nav">
+    <button class="sub-btn on" onclick="goTo('pricebox')">분양가</button>
+    <button class="sub-btn" onclick="goTo('gallery')">갤러리</button>
+    <button class="sub-btn" onclick="goTo('invest')">투자가치</button>
+    <button class="sub-btn" onclick="goTo('overview')">단지개요</button>
+    <button class="sub-btn" onclick="goTo('complex')">단지안내</button>
+    <button class="sub-btn" onclick="goTo('features')">단지특화</button>
+    <button class="sub-btn" onclick="goTo('location')">입지환경</button>
+    <button class="sub-btn" onclick="goTo('types')">타입선택</button>
+    <button class="sub-btn" onclick="goTo('modelhouse')">모델하우스</button>
+    <button class="sub-btn" onclick="goTo('contact')">상담신청</button>
+  </div>
+
+  <!-- ── 메인 사진 히어로 ── -->
+  <div class="d-hero-img">
+    <img src="images/prugio/prugio_main_banner.webp" alt="수지 파크에디션 전경">
+    <div class="d-hero-img-placeholder">
+      <i class="ti ti-building-skyscraper"></i>
+      <!-- <span>단지 대표 사진 영역 · 권장 1920×720px</span> -->
+    </div>
+    <div class="d-hero-img-overlay"></div>
+    <div class="d-hero-img-info">
+      <div class="d-hero-img-info-left">
+        <div class="d-badge">
+          <div class="d-badge-dot"></div>
+          분양 접수 중
+        </div>
+        <div class="d-name">용인푸르지오 원클러스터</div>
+        <div class="d-addr">
+          <i class="ti ti-map-pin"></i>경기도 용인시 처인구 양지면
+        </div>
+      </div>
+      <div class="d-hero-img-tags">
+        <span class="d-hero-img-tag">SK하이닉스 반도체클러스터</span>
+        <span class="d-hero-img-tag">삼성전자 반도체클러스터</span>
+        <span class="d-hero-img-tag">대형공원 공세권 프리미엄</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- 가격 카드(좌) + 태그+갤러리(우) -->
+    <div class="d-hero-body" id="pricebox">
+      <!-- 좌: 가격 카드 -->
+      <div class="price-card">
+        <div class="pc-status">
+          <div class="pc-dot"></div>
+          <div class="pc-status-text">분양 접수 중</div>
+        </div>
+        <div class="pc-lbl">분양가</div>
+        <div class="pc-price">4.8억 ~ 9.2억</div>
+        <div class="pc-line">
+          <span class="pc-key">59㎡</span><span class="pc-val">4억 8천 ~ 5억 5천</span>
+        </div>
+        <div class="pc-line">
+          <span class="pc-key">74㎡</span><span class="pc-val">5억 9천 ~ 6억 8천</span>
+        </div>
+        <div class="pc-line">
+          <span class="pc-key">84㎡</span><span class="pc-val">6억 8천 ~ 9억 2천</span>
+        </div>
+        <div class="pc-line">
+          <span class="pc-key">입주 예정</span><span class="pc-val">2026년 12월</span>
+        </div>
+        <div class="pc-dday">⏰ 마감 임박</div>
+        <button class="pc-btn-primary" onclick="scrollToContact()">
+          분양 상담 신청하기
+        </button>
+        <!-- <button class="pc-btn-sec">
+          <i class="ti ti-download" style="font-size: 13px; margin-right: 4px; vertical-align: -1px"></i>분양 자료 다운로드
+        </button> -->
+      </div>
+      <!-- 우: 태그 + 갤러리 -->
+      <div class="hero-right-col" id="gallery">
+        <div class="d-hero-tags">
+          <span class="d-tag">SK하이닉스 반도체클러스터</span>
+          <span class="d-tag">삼성전자 반도체클러스터</span>
+          <span class="d-tag">대형공원 공세원 프리미엄</span>
+          <span class="d-tag">초·중교 도보권</span>
+          <span class="d-tag">9개 타입구성</span>
+        </div>
+        <div class="gallery-wrap">
+          <div class="gallery-grid">
+            <div class="g-cell g-main" onclick="openLightbox(0)">
+              <i class="ti ti-photo"></i><img src="images/prugio/prugio_view_1.webp" alt="용인푸르지오 원클러스터">
+              <div class="g-zoom"><i class="ti ti-zoom-in"></i></div>
+            </div>
+            <div class="g-cell" onclick="openLightbox(1)">
+              <i class="ti ti-building"></i><img src="images/prugio/prugio_view_2.webp" alt="용인푸르지오 원클러스터">
+              <div class="g-zoom"><i class="ti ti-zoom-in"></i></div>
+            </div>
+            <div class="g-cell" onclick="openLightbox(2)">
+              <i class="ti ti-tree"></i><img src="images/prugio/prugio_view_3.webp" alt="용인푸르지오 원클러스터">
+              <div class="g-zoom"><i class="ti ti-zoom-in"></i></div>
+            </div>
+            <div class="g-cell" onclick="openLightbox(3)">
+              <i class="ti ti-swimming-pool"></i><img src="images/prugio/prugio_view_4.webp" alt="용인푸르지오 원클러스터">
+              <div class="g-zoom"><i class="ti ti-zoom-in"></i></div>
+            </div>
+            <div class="g-cell g-more" onclick="openLightbox(4)">
+              <i class="ti ti-grid-3x3" style="font-size: 22px; color: var(--ink3)"></i>
+              </i><img src="images/prugio/prugio_view_6.webp" alt="용인푸르지오 원클러스터">
+              <span class="g-more-label">+더보기</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 투자 가치 분석 -->
+    <div class="invest-section" id="invest">
+      <div class="invest-head">
+        <div class="invest-kicker">투자 가치 분석</div>
+        <div class="invest-title">
+          왜 양지 푸르지오 원클러스터인가?<br />지금 분양받아야 하는 이유
+        </div>
+      </div>
+      <div class="invest-grid">
+        <div class="invest-item">
+          <span class="invest-icon">🏢</span>
+          <div class="invest-num">대기업 반도체</div>
+          <div class="invest-item-title">직주근접 프리미엄</div>
+          <div class="invest-item-desc">
+            · SK하이닉스 반도체클러스터(차량17분)<br>
+            · 삼성전자 반도체클러스터(차량22분)
+          </div>
+        </div>
+        <div class="invest-item">
+          <span class="invest-icon">🏡</span>
+          <div class="invest-num">브랜드 아파트</div>
+          <div class="invest-item-title">양지 유일 메이저브랜드</div>
+          <div class="invest-item-desc">
+            2025년 시공능력평가 3위
+            대우건설 푸르지오
+          </div>
+        </div>
+        <div class="invest-item">
+          <span class="invest-icon">🌳</span>
+          <div class="invest-num">공세권 프리미엄</div>
+          <div class="invest-item-title">수지 명문 학군</div>
+          <div class="invest-item-desc">
+            지구 내 대형 근린공원 조성<br>
+            자연환경 풍부한 쾌적한 주거환경
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 투자가치 슬라이더 -->
+    <div class="invest-slider-wrap">
+      <div class="invest-slider" id="investSlider">
+        <div class="invest-slide" onclick="openLightbox(7)" style="cursor:zoom-in;">
+          <img src="images/prugio/prugio_invest-photos_3.webp" alt="투자가치 3">
+        </div>
+        <div class="invest-slide" onclick="openLightbox(8)" style="cursor:zoom-in;">
+          <img src="images/prugio/prugio_invest-photos_4.webp" alt="투자가치 4">
+        </div>
+        <div class="invest-slide" onclick="openLightbox(9)" style="cursor:zoom-in;">
+          <img src="images/prugio/prugio_invest-photos_5.webp" alt="투자가치 5">
+        </div>
+        <div class="invest-slide" onclick="openLightbox(10)" style="cursor:zoom-in;">
+          <img src="images/prugio/prugio_invest-photos_6.webp" alt="투자가치 6">
+        </div>
+      </div>
+      <button class="invest-prev" onclick="moveInvest(-1)"><i class="ti ti-arrow-left"></i></button>
+      <button class="invest-next" onclick="moveInvest(1)"><i class="ti ti-arrow-right"></i></button>
+      <div class="invest-dots" id="investDots"></div>
+    </div>
+
+    <div class="invest-photos">
+      <div class="invest-photo">
+        <img src="images/prugio/prugio_invest-photos_1.webp" alt="투자가치 이미지 1">
+      </div>
+      <div class="invest-photo">
+        <img src="images/prugio/prugio_invest-photos_2.webp" alt="투자가치 이미지 2">
+      </div>
+    </div>
+
+
+
+    <!-- 단지개요 -->
+    <section class="sec" id="overview">
+      <div class="sec-title">단지 개요</div>
+      <!-- 단지개요 대표 이미지 -->
+      <div class="sec-banner-img">
+        <img src="images/prugio/prugio_main_banner.webp" alt="단지 전경">
+        <!-- 이미지 없을 때 플레이스홀더 -->
+        <!-- <div class="sec-banner-placeholder"><i class="ti ti-building-skyscraper"></i><span>단지 개요 이미지 · 권장 1080×400px</span></div> -->
+      </div>
+      <div class="overview-grid">
+        <div class="ov-col">
+          <div class="ov-row">
+            <span class="ov-key">위치</span><span class="ov-val">경기 용인시 처인구 양지면</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">건설사</span><span class="ov-val">대우건설 주식회사</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">총 세대수</span><span class="ov-val">847세대</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">동 수</span><span class="ov-val">6개동</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">층수</span><span class="ov-val">지하 3층 / 지상 최고 30층</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">입주 예정</span><span class="ov-val">2026년 12월</span>
+          </div>
+        </div>
+        <div class="ov-col">
+          <div class="ov-row">
+            <span class="ov-key">용도지역</span><span class="ov-val">제2종 일반주거지역</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">주차 대수</span><span class="ov-val">세대당 1.5대</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">난방 방식</span><span class="ov-val">개별난방 (도시가스)</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">특별공급</span><span class="ov-val">169세대</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">일반공급</span><span class="ov-val">424세대</span>
+          </div>
+          <div class="ov-row">
+            <span class="ov-key">시공 보증</span><span class="ov-val">대한주택보증</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 단지안내 -->
+    <section class="sec" id="complex">
+      <div class="sec-title">단지 안내</div>
+      <div class="complex-photos">
+        <div class="complex-main" onclick="openLightbox(11)" style="cursor:pointer">
+          <img src="images/prugio/prugio_internal_1.webp" alt="단지 안내 메인">
+        </div>
+        <div class="complex-sub-row">
+          <div class="complex-sub" onclick="openLightbox(12)" style="cursor:pointer">
+            <img src="images/prugio/prugio_internal_2.webp" alt="단지 안내 1">
+          </div>
+          <div class="complex-sub" onclick="openLightbox(13)" style="cursor:pointer">
+            <img src="images/prugio/prugio_internal_3.webp" alt="단지 안내 2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 단지 특화 & 커뮤니티 -->
+    <section class="feature-sec" id="features">
+      <div class="feature-kicker">다채로운 입주민 전용공간</div>
+      <div class="feature-title">프리미엄 커뮤니티 & 스마트 생활</div>
+
+      <!-- 커뮤니티 슬라이더 -->
+      <div class="community-slider-wrap">
+        <div class="community-slider" id="communitySlider">
+          <div class="community-slide" onclick="openLightbox(14)" style="cursor:zoom-in;">
+            <img src="images/prugio/prugio_community_1.webp" alt="커뮤니티 1">
+          </div>
+          <div class="community-slide" onclick="openLightbox(15)" style="cursor:zoom-in;">
+            <img src="images/prugio/prugio_community_2.webp" alt="커뮤니티 2">
+          </div>
+          <div class="community-slide" onclick="openLightbox(16)" style="cursor:zoom-in;">
+            <img src="images/prugio/prugio_community_3.webp" alt="커뮤니티 3">
+          </div>
+          <div class="community-slide" onclick="openLightbox(17)" style="cursor:zoom-in;">
+            <img src="images/prugio/prugio_community_4.webp" alt="커뮤니티 4">
+          </div>
+          <div class="community-slide" onclick="openLightbox(18)" style="cursor:zoom-in;">
+            <img src="images/prugio/prugio_community_5.webp" alt="커뮤니티 5">
+          </div>
+          <div class="community-slide" onclick="openLightbox(19)" style="cursor:zoom-in;">
+            <img src="images/prugio/prugio_community_6.webp" alt="커뮤니티 6">
+          </div>
+        </div>
+        <button class="community-prev" onclick="moveCommunity(-1)"><i class="ti ti-arrow-left"></i></button>
+        <button class="community-next" onclick="moveCommunity(1)"><i class="ti ti-arrow-right"></i></button>
+        <div class="community-counter" id="communityCounter">1 / 6</div>
+      </div>
+
+
+      <!-- 커뮤니티 시설 8개 -->
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-blue">
+            <i class="ti ti-barbell"></i>
+          </div>
+          <div class="fc-name">피트니스센터</div>
+          <div class="fc-desc">
+            최신 운동기구 완비, 전문 트레이너 상주
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-green">
+            <i class="ti ti-golf"></i>
+          </div>
+          <div class="fc-name">골프연습장</div>
+          <div class="fc-desc">
+            계절에 관계없이 즐기는 고품격 하이엔드 커뮤니티</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-purple"><i class="ti ti-book"></i></div>
+          <div class="fc-name">독서실·스터디룸</div>
+          <div class="fc-desc">
+            집중 학습 공간, 개별 좌석 구분 운영
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-amber">
+            <i class="ti ti-coffee"></i>
+          </div>
+          <div class="fc-name">그리너리카페</div>
+          <div class="fc-desc">학습과 문화를 지원하는 푸르지오만의 특별한 쉼터</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-sky">
+            <i class="ti ti-building-community"></i>
+          </div>
+          <div class="fc-name">공유오피스</div>
+          <div class="fc-desc">입주민들의 만남과 소통이 이어지는 오픈 스페이스</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-red"><i class="ti ti-heart"></i></div>
+          <div class="fc-name">어린이집·유치원 돌봄센터</div>
+          <div class="fc-desc">아이들의 보육과 상상력을 케어하는 안전한 공간</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-gold"><i class="ti ti-trees"></i></div>
+          <div class="fc-name">테마 조경공원</div>
+          <div class="fc-desc">
+            계절별 테마 정원, 산책로, 어린이 놀이터
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon fc-icon-navy">
+            <i class="ti ti-package"></i>
+          </div>
+          <div class="fc-name">주민회의실</div>
+          <div class="fc-desc">
+            미팅과 교류를 지원하는 입주민 전용 프라이빗 룸
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-kicker">다채로운 입주민 전용공간</div>
+      <div class="feature-title">프리미엄 커뮤니티 & 스마트 생활</div>
+
+      <!-- 옵션 자동 슬라이더 -->
+      <div class="option-slider-wrap">
+        <div class="option-slider" id="optionSlider">
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_1.webp" alt="아파트 옵션 1">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_2.webp" alt="아파트 옵션 2">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_3.webp" alt="아파트 옵션 3">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_4.webp" alt="아파트 옵션 4">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_5.webp" alt="아파트 옵션 5">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_6.webp" alt="아파트 옵션 6">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_7.webp" alt="아파트 옵션 7">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_8.webp" alt="아파트 옵션 8">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_9.webp" alt="아파트 옵션 9">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_10.webp" alt="아파트 옵션 10">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_11.webp" alt="아파트 옵션 11">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_12.webp" alt="아파트 옵션 12">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_13.webp" alt="아파트 옵션 13">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_14.webp" alt="아파트 옵션 14">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_15.webp" alt="아파트 옵션 15">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_16.webp" alt="아파트 옵션 16">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_17.webp" alt="아파트 옵션 17">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_18.webp" alt="아파트 옵션 18">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_19.webp" alt="아파트 옵션 19">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_20.webp" alt="아파트 옵션 20">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_21.webp" alt="아파트 옵션 21">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_22.webp" alt="아파트 옵션 22">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_23.webp" alt="아파트 옵션 23">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_24.webp" alt="아파트 옵션 24">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_25.webp" alt="아파트 옵션 25">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_26.webp" alt="아파트 옵션 26">
+          </div>
+          <div class="option-slide">
+            <img src="images/prugio/prugio_option_27.webp" alt="아파트 옵션 27">
+          </div>
+        </div>
+        <button class="option-prev" onclick="moveOption(-1)"><i class="ti ti-arrow-left"></i></button>
+        <button class="option-next" onclick="moveOption(1)"><i class="ti ti-arrow-right"></i></button>
+      </div>
+
+      <!-- 스마트홈 & 마감재 -->
+      <div class="smart-row">
+        <div class="smart-item">
+          <i class="ti ti-home-cog"></i>
+          <div class="smart-item-text">
+            <div class="smart-item-name">스마트홈 시스템</div>
+            <div class="smart-item-desc">IoT월패드·앱 원격 제어</div>
+          </div>
+        </div>
+        <div class="smart-item">
+          <i class="ti ti-tool"></i>
+          <div class="smart-item-text">
+            <div class="smart-item-name">빌트인 시스템</div>
+            <div class="smart-item-desc">최첨단 시스템 감도 높은 라이프스타일 </div>
+          </div>
+        </div>
+        <div class="smart-item">
+          <i class="ti ti-air-conditioning"></i>
+          <div class="smart-item-text">
+            <div class="smart-item-name">수납&스타일링 시스템</div>
+            <div class="smart-item-desc">다채로운 수납공간·남다른 공간</div>
+          </div>
+        </div>
+        <div class="smart-item">
+          <i class="ti ti-car"></i>
+          <div class="smart-item-text">
+            <div class="smart-item-name">친환경 시스템</div>
+            <div class="smart-item-desc">친환경 그린시스템·알뜰 건강생활</div>
+          </div>
+        </div>
+        <div class="smart-item">
+          <i class="ti ti-camera"></i>
+          <div class="smart-item-text">
+            <div class="smart-item-name">AI 통합 보안</div>
+            <div class="smart-item-desc">안면인식·CCTV 지능형 관제</div>
+          </div>
+        </div>
+        <div class="smart-item">
+          <i class="ti ti-building"></i>
+          <div class="smart-item-text">
+            <div class="smart-item-name">고급 마감재</div>
+            <div class="smart-item-desc">아파트의 삶의 질을 높인 마감재</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 입지환경 -->
+    <section class="sec" id="location">
+      <div class="sec-title">입지 환경</div>
+      <!-- 입지환경 대표 이미지 -->
+      <div class="sec-banner-img" onclick="openLightbox(20)" style="cursor:pointer">
+        <img src="images/prugio/prugio_map_1.webp" alt="단지 위치 지도">
+        <!-- 이미지 없을 때 플레이스홀더 -->
+        <!-- <div class="sec-banner-placeholder"><i class="ti ti-map-2"></i><span>입지환경 이미지 · 권장 1080×400px</span></div> -->
+      </div>
+
+      <div class="loc-grid">
+        <div class="map-box" onclick="openLightbox(21)" style="cursor:pointer">
+
+          지도 옵션 1 — 이미지 지도 (권장, 가장 간단)
+          <img src="images/prugio/prugio_map_2.webp" alt="단지 위치 지도">
+
+          <!-- 지도 옵션 2 — 카카오 지도 (카카오 API 키 필요)
+          <iframe src="https://map.kakao.com/?q=용인시+수지구+상현동" allowfullscreen></iframe> -->
+
+          <!-- 지도 옵션 3 — 네이버 지도 (네이버 API 키 필요)
+          <iframe src="https://map.naver.com/?query=경기도+용인시+수지구+상현동" allowfullscreen></iframe> -->
+
+          <!-- <i class="ti ti-map-2"></i>
+          <span>경기도 용인시 수지구 상현동</span>
+          <div class="map-btns">
+            <a class="map-btn map-btn-kakao" href="https://map.kakao.com/?q=용인시+수지구+상현동" target="_blank"><i
+                class="ti ti-map-pin" style="font-size: 12px"></i>카카오
+              지도</a>
+            <a class="map-btn map-btn-naver" href="https://map.naver.com/?query=경기도+용인시+수지구+상현동" target="_blank"><i
+                class="ti ti-map-pin" style="font-size: 12px"></i>네이버
+              지도</a>
+          </div> -->
+        </div>
+        <div class="infra-list">
+          <div class="infra-item">
+            <span class="infra-left"><i class="ti ti-train"></i>신분당선 상현역</span><span class="infra-dist">도보 5분</span>
+          </div>
+          <div class="infra-item">
+            <span class="infra-left"><i class="ti ti-train"></i>GTX-A 수지구청역 (예정)</span><span class="infra-dist">도보
+              12분</span>
+          </div>
+          <div class="infra-item">
+            <span class="infra-left"><i class="ti ti-car"></i>경부고속도로 수원IC</span><span class="infra-dist">차량 8분</span>
+          </div>
+          <div class="infra-item">
+            <span class="infra-left"><i class="ti ti-school"></i>상현초·중·고 학군</span><span class="infra-dist">도보 10분</span>
+          </div>
+          <div class="infra-item">
+            <span class="infra-left"><i class="ti ti-building-store"></i>광교 갤러리아 백화점</span><span class="infra-dist">차량
+              10분</span>
+          </div>
+          <div class="infra-item">
+            <span class="infra-left"><i class="ti ti-tree"></i>광교호수공원</span><span class="infra-dist">차량 5분</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 타입선택 -->
+    <section class="sec" id="types">
+      <div class="sec-title">타입 선택</div>
+      <div class="type-tabs">
+        <button class="type-tab on" onclick="switchType('80', this)">
+          80㎡
+        </button>
+        <button class="type-tab" onclick="switchType('74', this)">
+          74㎡
+        </button>
+        <button class="type-tab" onclick="switchType('84', this)">
+          84㎡
+        </button>
+      </div>
+
+      <!-- 59㎡ -->
+      <div class="type-grid" id="t80">
+        <div class="type-card on" onclick="pick(this, '80A')">
+          <div class="type-img">
+            <i class="ti ti-layout-2"><img src="images/prugio/prugio_type_80a_1.png"></i>
+            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
+          </div>
+          <div class="type-body">
+            <div class="type-name">80㎡ A타입</div>
+            <div class="type-area">공급 79.26㎡ / 전용 59.97㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">218세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">4.8억 ~ 5.5억</span>
+              </div>
+            </div>
+            <span class="pop-badge">인기 타입</span>
+          </div>
+        </div>
+        <!-- <div class="type-card" onclick="pick(this, '59B')">
+          <div class="type-img" onclick="
+                event.stopPropagation();
+                openTypeLightbox(0);
+              ">
+            <i class="ti ti-layout-2"></i>
+            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
+          </div>
+          <div class="type-body">
+            <div class="type-name">59㎡ B타입</div>
+            <div class="type-area">공급 78.84㎡ / 전용 59.56㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">186세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">4.8억 ~ 5.4억</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+      <!-- 74㎡ -->
+      <div class="type-grid" id="t74" style="display: none">
+        <div class="type-card on" onclick="pick(this, '74A')">
+          <div class="type-img" onclick="
+                event.stopPropagation();
+                openTypeLightbox(0);
+              ">
+            <i class="ti ti-layout-2"></i>
+            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
+          </div>
+          <div class="type-body">
+            <div class="type-name">74㎡ A타입</div>
+            <div class="type-area">공급 98.10㎡ / 전용 74.33㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">192세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">5.9억 ~ 6.8억</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="type-card" onclick="pick(this, '74B')">
+          <div class="type-img" onclick="
+                event.stopPropagation();
+                openTypeLightbox(0);
+              ">
+            <i class="ti ti-layout-2"></i>
+            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
+          </div>
+          <div class="type-body">
+            <div class="type-name">74㎡ B타입</div>
+            <div class="type-area">공급 97.42㎡ / 전용 74.12㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">155세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">5.9억 ~ 6.5억</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 84㎡ -->
+      <div class="type-grid" id="t84" style="display: none">
+        <div class="type-card on" onclick="pick(this, '84A')">
+          <div class="type-img" onclick="
+                event.stopPropagation();
+                openTypeLightbox(0);
+              ">
+            <i class="ti ti-layout-2"></i>
+            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
+          </div>
+          <div class="type-body">
+            <div class="type-name">84㎡ A타입</div>
+            <div class="type-area">공급 110.77㎡ / 전용 84.89㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방4 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">148세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">6.8억 ~ 9.2억</span>
+              </div>
+            </div>
+            <span class="pop-badge">조망 우수</span>
+          </div>
+        </div>
+        <div class="type-card" onclick="pick(this, '84B')">
+          <div class="type-img" onclick="
+                event.stopPropagation();
+                openTypeLightbox(0);
+              ">
+            <i class="ti ti-layout-2"></i>
+            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
+          </div>
+          <div class="type-body">
+            <div class="type-name">84㎡ B타입</div>
+            <div class="type-area">공급 110.22㎡ / 전용 84.45㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방4 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">100세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">6.8억 ~ 8.5억</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 타입 상세 패널 (카드 클릭 시 펼쳐짐) - 모든 탭 공통 -->
+      <div class="type-detail-panel" id="typePanel">
+        <div class="tdp-inner">
+          <div class="tdp-imgs">
+            <div class="tdp-img-main" id="tdpImgMain">
+              <i class="ti ti-layout-2"></i>
+            </div>
+            <div class="tdp-img-row-wrap">
+              <div class="tdp-img-row" id="tdpSubRow">
+                <!-- JS에서 동적 생성 -->
+              </div>
+              <button class="tdp-sub-prev" onclick="moveSubImg(-1)"><i class="ti ti-arrow-left"></i></button>
+              <button class="tdp-sub-next" onclick="moveSubImg(1)"><i class="ti ti-arrow-right"></i></button>
+            </div>
+          </div>
+          <div class="tdp-info" id="tdpInfo">
+            <!-- JS로 채워짐 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 모델하우스 (PC 가로 3컬럼) -->
+    <section class="sec" id="modelhouse">
+      <div class="sec-title">모델하우스</div>
+      <div class="mh-unified">
+        <div class="mh-item">
+          <div class="mh-icon-wrap"><i class="ti ti-clock"></i></div>
+          <div class="mh-key">운영 시간</div>
+          <div class="mh-val">
+            평일 10:00 – 18:00<br />주말·공휴일 10:00 – 18:00
+          </div>
+        </div>
+        <div class="mh-item">
+          <div class="mh-icon-wrap"><i class="ti ti-phone"></i></div>
+          <div class="mh-key">대표 전화</div>
+          <div class="mh-val">1522-5681</div>
+        </div>
+        <div class="mh-item">
+          <div class="mh-icon-wrap"><i class="ti ti-car"></i></div>
+          <div class="mh-key">주차 안내</div>
+          <div class="mh-val">전용 주차장 운영 (무료)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 상담 접수 폼 -->
+    <section class="contact-sec" id="contact">
+      <div class="contact-wrap">
+        <div class="contact-inner">
+          <div class="contact-kicker">분양 상담 신청</div>
+          <div class="contact-title">분양 상담을 신청하세요</div>
+          <div class="contact-sub">
+            대출·자격·세금 등 궁금한 점을 모두 확인해보세요.<br>
+            아래 양식을 작성하시면 담당자가 <strong style="color: var(--ink2)">1일 이내</strong>연락드립니다.
+          </div>
+          <div id="formWrap">
+            <div class="form-row">
+              <div class="field">
+                <label class="field-lbl" for="inp-name">성함</label><input class="field-inp" id="inp-name" type="text"
+                  placeholder="홍길동" maxlength="20" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label class="field-lbl" for="inp-phone">연락처</label><input class="field-inp" id="inp-phone" type="tel"
+                  placeholder="010-0000-0000" maxlength="13" autocomplete="tel" />
+              </div>
+            </div>
+            <label class="privacy-row" for="inp-priv">
+              <input type="checkbox" id="inp-priv" />
+              <div class="chk-box"><i class="ti ti-check"></i></div>
+              <div class="privacy-text">
+                <strong>개인정보 수집·이용 동의 (필수)</strong><br />수집항목:
+                이름, 연락처 · 이용목적: 분양 상담 연락 · 보유기간: 상담 완료
+                후 1년
+              </div>
+            </label>
+            <button class="submit-btn" id="submitBtn" onclick="doSubmit()">
+              <span class="btn-txt"><i class="ti ti-send" style="font-size: 15px"></i> 상담
+                접수하기</span>
+              <div class="spinner"></div>
+            </button>
+          </div>
+          <div class="done-box" id="doneBox">
+            <div class="done-icon"><i class="ti ti-check"></i></div>
+            <div class="done-title">접수가 완료되었습니다</div>
+            <div class="done-msg">
+              담당자가 곧 연락드리겠습니다.<br />
+              1522-5681로 연락주시면, 빠른 안내 받으실 수 있습니다.
+            </div>
+          </div>
+        </div>
+        <!-- /.contact-inner -->
+        <!-- PC 우측 이미지 (모바일에서는 숨김) -->
+        <div class="contact-img pc-only">
+          <!-- 실사진: <img src="images/contact_bg.jpg" alt="상담 이미지"> -->
+          <i class="ti ti-building-skyscraper"></i>
+          <span>단지 이미지 · 권장 600×800px</span>
+        </div>
+      </div>
+      <!-- /.contact-wrap -->
+    </section>
+  </div>
+  <!-- /.wrap -->
+
+  <!-- 모델하우스 / 방문상담 -->
+  <section class="visit-cta">
+    <div class="visit-inner">
+      <div class="visit-card">
+        <div class="visit-icon"><i class="ti ti-home"></i></div>
+        <div>
+          <div class="visit-card-title">모델하우스 방문</div>
+          <div class="visit-card-desc">
+            실제 모델하우스를 직접 방문해 단지 환경과 내부 구조를 확인하세요.<br>
+            대출자격 및 다양한 정보를 상세히 설명해 드리겠습니다.<br /><br />운영시간 · 평일
+            10:00–18:00 / 주말 10:00–18:00 (연중무휴)
+          </div>
+        </div>
+        <a href="tel:010-2332-12" class="v-btn v-btn-gold"><i class="ti ti-phone"></i> 방문 예약하기</a>
+      </div>
+      <div class="visit-card">
+        <div class="visit-icon"><i class="ti ti-calendar"></i></div>
+        <div>
+          <div class="visit-card-title">상담 예약</div>
+          <div class="visit-card-desc">
+            대출·자격·세금 등 궁금한 점을 모두 확인해보세요.<br>
+            아래 양식을 작성하시면 담당자가 1일 이내 연락드립니다.
+          </div>
+          <div style="
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-top: 16px;
+              ">
+            <input id="v-name" class="v-field" type="text" placeholder="성함" />
+            <input id="v-phone" class="v-field" type="tel" placeholder="010-0000-0000" />
+          </div>
+        </div>
+        <button class="v-btn v-btn-gold" onclick="visitSubmit()">
+          <i class="ti ti-send"></i> 상담 신청하기
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 갤러리 라이트박스 -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">
+      <i class="ti ti-x"></i>
+    </button>
+    <div class="lb-img" id="lbImg" onclick="event.stopPropagation()">
+      <!-- <i class="ti ti-photo"></i> -->
+      <!-- 실사진 시: <img id="lbImgEl" src="" alt=""> -->
+    </div>
+    <div class="lb-caption" id="lbCaption"></div>
+    <div class="lb-nav">
+      <button class="lb-nav-btn" onclick="
+            event.stopPropagation();
+            moveLb(-1);
+          ">
+        <i class="ti ti-arrow-left"></i> 이전
+      </button>
+      <button class="lb-nav-btn" onclick="
+            event.stopPropagation();
+            moveLb(1);
+          ">
+        다음 <i class="ti ti-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="f-logo">용인 분양</div>
+    <div class="f-copy">© 2025 용인분양. All rights reserved.</div>
+    <div class="f-tel">1522-5681</div>
+  </footer>
+
+  <!-- FLOATING BAR -->
+  <div class="floating-bar" style="min-width:180px">
+    <a class="fl-btn" href="sms:010-2618-5929?body=안녕하세요, 분양 상담 요청드립니다." onclick="logClick('문자 클릭')"><i
+        class="ti ti-message"></i>문자</a>
+    <a class="fl-btn" href="tel:1522-5681" onclick="logClick('전화 클릭')"><i class="ti ti-phone"></i>전화</a>
+  </div>
+
+</body>
+
+</html>
