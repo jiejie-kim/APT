@@ -39,7 +39,7 @@ const typeImages = {
   "80A": [
     { src: "images/prugio/prugio_type_80a_1.png", caption: "80A 기본형" },
     { src: "images/prugio/prugio_type_80a_1.png", caption: "80A 기본형", label: "기본형" },
-    { src: "images/prugio/prugio_type_80a_2.png", caption: "80A 확장기본형", label: "확장기본형" },
+    { src: "images/prugio/prugio_type_80a_.webp", caption: "80A 확장기본형", label: "확장기본형" },
     { src: "images/prugio/prugio_type_80a_3.png", caption: "80A 유상옵션", label: "유상옵션" },
     { src: "images/prugio/prugio_type_80a_4.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
     { src: "images/prugio/prugio_type_80a_5.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
@@ -492,3 +492,76 @@ document.addEventListener("DOMContentLoaded", () => {
   initCommunitySlider();
   window.scrollTo(0, 0);
 });
+
+/* ── 모바일 바텀시트 모달 ── */
+/* ── 상세보기 버튼 클릭 → 모달 열기 ── */
+function pickModal(typeKey) {
+  const d = typeData[typeKey];
+  const imgs = typeImages[typeKey] || [];
+  if (!d) return;
+  openTypeModal(d, imgs);
+}
+
+function openTypeModal(d, imgs) {
+  const overlay = document.getElementById("typeModalOverlay");
+  const modal   = document.getElementById("typeModal");
+  if (!overlay || !modal) return;
+
+  // 타이틀
+  document.getElementById("typeModalTitle").innerHTML =
+    d.name + (d.badge
+      ? ` <span style="font-size:11px;color:var(--gold);font-weight:400">${d.badge}</span>`
+      : "");
+
+  // 메인 이미지
+  const imgEl = document.getElementById("typeModalImg");
+  imgEl.innerHTML = imgs[0]
+    ? `<img src="${imgs[0].src}" alt="${imgs[0].caption}">`
+    : `<i class="ti ti-layout-2"></i>`;
+
+  // 서브 이미지 (JS로 동적 생성 - 이미지 추가/삭제 시 JS만 수정)
+  const subEl = document.getElementById("typeModalSub");
+  subEl.innerHTML = "";
+  imgs.forEach((img, i) => {
+    const div = document.createElement("div");
+    div.className = "tms" + (i === 0 ? " on" : "");
+    div.innerHTML = img.src
+      ? `<img src="${img.src}" alt="${img.caption}">`
+      : `<i class="ti ti-layout-2"></i>`;
+    div.addEventListener("click", () => {
+      imgEl.innerHTML = `<img src="${img.src}" alt="${img.caption}">`;
+      subEl.querySelectorAll(".tms").forEach(s => s.classList.remove("on"));
+      div.classList.add("on");
+    });
+    subEl.appendChild(div);
+  });
+
+  // 스펙 정보
+  document.getElementById("typeModalPrice").textContent = d.price;
+  document.getElementById("typeModalRows").innerHTML = [
+    { k: "방 구조",   v: d.rooms },
+    { k: "세대수",    v: d.units },
+    { k: "공급 면적", v: d.area.split("/")[0].trim() },
+    { k: "전용 면적", v: d.area.split("/")[1].trim() },
+  ].map(r => `
+    <div class="type-modal-row">
+      <span class="type-modal-k">${r.k}</span>
+      <span class="type-modal-v">${r.v}</span>
+    </div>`).join("");
+
+  // 모달 열기
+  overlay.classList.add("open");
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  // 스크롤 맨 위로
+  modal.scrollTop = 0;
+}
+
+function closeTypeModal() {
+  const overlay = document.getElementById("typeModalOverlay");
+  const modal   = document.getElementById("typeModal");
+  if (overlay) overlay.classList.remove("open");
+  if (modal)   modal.classList.remove("open");
+  document.body.style.overflow = "";
+}

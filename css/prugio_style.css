@@ -1664,7 +1664,15 @@ img {
 }
 
 .type-detail-panel.open {
-  display: block
+  display: block;
+}
+
+/* 모바일에서 패널 숨김 - 바텀시트 모달 사용 */
+@media (max-width: 768px) {
+  .type-detail-panel,
+  .type-detail-panel.open {
+    display: none !important;
+  }
 }
 
 .tdp-inner {
@@ -2613,4 +2621,182 @@ footer {
   .d-name {
     font-size: 20px
   }
+}
+/* 타입 카드 상세보기 버튼 */
+.type-detail-btn {
+  display: none; /* 모바일에서만 보임 */
+  width: calc(100% - 24px);
+  margin: 0 12px 12px;
+  padding: 8px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: var(--r);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background .15s;
+}
+.type-detail-btn:hover { background: var(--navy2); }
+.type-detail-btn i { font-size: 13px; }
+
+@media (max-width: 768px) {
+  .type-detail-btn {
+    display: flex;
+  }
+}
+
+/* ── 모바일 타입 바텀시트 모달 ── */
+.type-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 800;
+}
+.type-modal-overlay.open { display: block; }
+
+.type-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  z-index: 801;
+  max-height: 88vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  display: block;
+}
+.type-modal.open {
+  transform: translateY(0);
+}
+.type-modal-handle {
+  width: 36px;
+  height: 4px;
+  background: rgba(0,0,0,.12);
+  border-radius: 2px;
+  margin: 10px auto 0;
+  flex-shrink: 0;
+}
+.type-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 8px;
+}
+.type-modal-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+}
+.type-modal-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--ink3);
+  cursor: pointer;
+}
+.type-modal-img {
+  height: 220px;
+  margin: 0 14px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #EDEAE4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.type-modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.type-modal-img i { font-size: 48px; color: rgba(0,0,0,.15); }
+.type-modal-sub {
+  display: flex;
+  gap: 6px;
+  padding: 8px 14px;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+.type-modal-sub::-webkit-scrollbar { display: none; }
+.tms {
+  width: 64px;
+  height: 52px;
+  border-radius: var(--r);
+  background: #EDEAE4;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tms.on { border-color: var(--gold); }
+.tms img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tms i { font-size: 18px; color: rgba(0,0,0,.2); }
+.type-modal-info { padding: 8px 16px; }
+.type-modal-price-lbl {
+  font-size: 10px;
+  color: var(--ink4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+.type-modal-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+.type-modal-rows { border-top: 0.5px solid var(--line); }
+.type-modal-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 0.5px solid var(--line);
+  font-size: 13px;
+}
+.type-modal-row:last-child { border-bottom: none; }
+.type-modal-k { color: var(--ink3); }
+.type-modal-v { font-weight: 600; color: var(--ink); }
+.type-modal-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: calc(100% - 28px);
+  margin: 8px 14px 28px;
+  padding: 13px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: var(--r);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+}
+.type-modal-cta:hover { background: var(--navy2); }
+
+@media (min-width: 769px) {
+  .type-modal, .type-modal-overlay { display: none !important; }
 }
