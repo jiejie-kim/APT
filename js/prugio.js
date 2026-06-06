@@ -130,6 +130,28 @@ const typeData = {
 };
 
 /* ── 타입 카드 클릭 ── */
+// pickWithModal: 카드/이미지 클릭 시
+// - 테두리 선택 효과
+// - 모바일: 바텀시트 모달
+// - PC: 기존 패널
+function pickWithModal(card, typeKey) {
+  // 테두리 선택 효과 (PC/모바일 공통)
+  const grid = card.closest(".type-grid");
+  if (grid) grid.querySelectorAll(".type-card").forEach(c => c.classList.remove("on"));
+  card.classList.add("on");
+
+  // 모바일: 바텀시트 모달
+  if (window.innerWidth <= 768) {
+    const d = typeData[typeKey];
+    const imgs = typeImages[typeKey] || [];
+    if (d) openTypeModal(d, imgs);
+    return;
+  }
+
+  // PC: 기존 pick 함수 그대로
+  pick(card, typeKey);
+}
+
 function pick(card, typeKey) {
   card.closest(".type-grid").querySelectorAll(".type-card")
     .forEach(c => c.classList.remove("on"));
@@ -491,7 +513,22 @@ document.addEventListener("DOMContentLoaded", () => {
   initOptionSlider();
   initCommunitySlider();
   window.scrollTo(0, 0);
+
+  // 스크롤 페이드인
+  const fadeEls = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // 한 번만 실행
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeEls.forEach(el => observer.observe(el));
 });
+
+
 
 /* ── 모바일 바텀시트 모달 ── */
 /* ── 상세보기 버튼 클릭 → 모달 열기 ── */
@@ -504,7 +541,7 @@ function pickModal(typeKey) {
 
 function openTypeModal(d, imgs) {
   const overlay = document.getElementById("typeModalOverlay");
-  const modal   = document.getElementById("typeModal");
+  const modal = document.getElementById("typeModal");
   if (!overlay || !modal) return;
 
   // 타이틀
@@ -539,8 +576,8 @@ function openTypeModal(d, imgs) {
   // 스펙 정보
   document.getElementById("typeModalPrice").textContent = d.price;
   document.getElementById("typeModalRows").innerHTML = [
-    { k: "방 구조",   v: d.rooms },
-    { k: "세대수",    v: d.units },
+    { k: "방 구조", v: d.rooms },
+    { k: "세대수", v: d.units },
     { k: "공급 면적", v: d.area.split("/")[0].trim() },
     { k: "전용 면적", v: d.area.split("/")[1].trim() },
   ].map(r => `
@@ -560,8 +597,8 @@ function openTypeModal(d, imgs) {
 
 function closeTypeModal() {
   const overlay = document.getElementById("typeModalOverlay");
-  const modal   = document.getElementById("typeModal");
+  const modal = document.getElementById("typeModal");
   if (overlay) overlay.classList.remove("open");
-  if (modal)   modal.classList.remove("open");
+  if (modal) modal.classList.remove("open");
   document.body.style.overflow = "";
 }

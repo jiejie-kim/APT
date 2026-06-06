@@ -69,7 +69,7 @@
 
   <div class="wrap">
     <!-- 가격 카드(좌) + 태그+갤러리(우) -->
-    <div class="d-hero-body" id="pricebox">
+    <div class="d-hero-body fade-in" id="pricebox">
       <!-- 좌: 가격 카드 -->
       <div class="price-card">
         <div class="pc-status">
@@ -107,7 +107,7 @@
           <span class="d-tag">초·중교 도보권</span>
           <span class="d-tag">9개 타입구성</span>
         </div>
-        <div class="gallery-wrap">
+        <div class="gallery-wrap fade-in">
           <div class="gallery-grid">
             <div class="g-cell g-main" onclick="openLightbox(0)">
               <i class="ti ti-photo"></i><img src="images/prugio/prugio_view_1.webp" alt="용인푸르지오 원클러스터">
@@ -137,7 +137,7 @@
 
 
     <!-- 투자 가치 분석 -->
-    <div class="invest-section" id="invest">
+    <div class="invest-section fade-in" id="invest">
       <div class="invest-head">
         <div class="invest-kicker">투자 가치 분석</div>
         <div class="invest-title">
@@ -208,7 +208,7 @@
 
 
     <!-- 단지개요 -->
-    <section class="sec" id="overview">
+    <section class="sec fade-in" id="overview">
       <div class="sec-title">단지 개요</div>
       <!-- 단지개요 대표 이미지 -->
       <div class="sec-banner-img">
@@ -262,7 +262,7 @@
     </section>
 
     <!-- 단지안내 -->
-    <section class="sec" id="complex">
+    <section class="sec fade-in" id="complex">
       <div class="sec-title">단지 안내</div>
       <div class="complex-photos">
         <div class="complex-main" onclick="openLightbox(11)" style="cursor:pointer">
@@ -280,7 +280,7 @@
     </section>
 
     <!-- 단지 특화 & 커뮤니티 -->
-    <section class="feature-sec" id="features">
+    <section class="feature-sec fade-in" id="features">
       <div class="feature-kicker">다채로운 입주민 전용공간</div>
       <div class="feature-title">프리미엄 커뮤니티 & 스마트 생활</div>
 
@@ -515,7 +515,7 @@
     </section>
 
     <!-- 입지환경 -->
-    <section class="sec" id="location">
+    <section class="sec fade-in" id="location">
       <div class="sec-title">입지 환경</div>
       <!-- 입지환경 대표 이미지 -->
       <div class="sec-banner-img" onclick="openLightbox(20)" style="cursor:pointer">
@@ -573,7 +573,7 @@
     </section>
 
     <!-- 타입선택 -->
-    <section class="sec" id="types">
+    <section class="sec fade-in" id="types">
       <div class="sec-title">타입 선택</div>
       <div class="type-tabs">
         <button class="type-tab on" onclick="switchType('80', this)">
@@ -589,10 +589,9 @@
 
       <!-- 59㎡ -->
       <div class="type-grid" id="t80">
-        <div class="type-card on" onclick="pick(this, '80A')">
+        <div class="type-card on" onclick="pickWithModal(this, '80A')">
           <div class="type-img">
             <i class="ti ti-layout-2"><img src="images/prugio/prugio_type_80a_1.png"></i>
-            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
           </div>
           <div class="type-body">
             <div class="type-name">80㎡ A타입</div>
@@ -612,13 +611,9 @@
           </div>
           <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('80A')"><i class="ti ti-search"></i> 상세보기</button>
         </div>
-        <!-- <div class="type-card" onclick="pick(this, '59B')">
-          <div class="type-img" onclick="
-                event.stopPropagation();
-                openTypeLightbox(0);
-              ">
+        <!-- <div class="type-card" onclick="pickWithModal(this, '59B')">
+          <div class="type-img">
             <i class="ti ti-layout-2"></i>
-            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
           </div>
           <div class="type-body">
             <div class="type-name">59㎡ B타입</div>
@@ -641,13 +636,9 @@
 
       <!-- 74㎡ -->
       <div class="type-grid" id="t74" style="display: none">
-        <div class="type-card on" onclick="pick(this, '74A')">
-          <div class="type-img" onclick="
-                event.stopPropagation();
-                openTypeLightbox(0);
-              ">
+        <div class="type-card on" onclick="pickWithModal(this, '74A')">
+          <div class="type-img">
             <i class="ti ti-layout-2"></i>
-            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
           </div>
           <div class="type-body">
             <div class="type-name">74㎡ A타입</div>
@@ -666,13 +657,9 @@
           </div>
           <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('74A')"><i class="ti ti-search"></i> 상세보기</button>
         </div>
-        <div class="type-card" onclick="pick(this, '74B')">
-          <div class="type-img" onclick="
-                event.stopPropagation();
-                openTypeLightbox(0);
-              ">
+        <div class="type-card" onclick="pickWithModal(this, '74B')">
+          <div class="type-img">
             <i class="ti ti-layout-2"></i>
-            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
           </div>
           <div class="type-body">
             <div class="type-name">74㎡ B타입</div>
@@ -695,13 +682,9 @@
 
       <!-- 84㎡ -->
       <div class="type-grid" id="t84" style="display: none">
-        <div class="type-card on" onclick="pick(this, '84A')">
-          <div class="type-img" onclick="
-                event.stopPropagation();
-                openTypeLightbox(0);
-              ">
+        <div class="type-card on" onclick="pickWithModal(this, '84A')">
+          <div class="type-img">
             <i class="ti ti-layout-2"></i>
-            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
           </div>
           <div class="type-body">
             <div class="type-name">84㎡ A타입</div>
@@ -721,13 +704,9 @@
           </div>
           <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('84A')"><i class="ti ti-search"></i> 상세보기</button>
         </div>
-        <div class="type-card" onclick="pick(this, '84B')">
-          <div class="type-img" onclick="
-                event.stopPropagation();
-                openTypeLightbox(0);
-              ">
+        <div class="type-card" onclick="pickWithModal(this, '84B')">
+          <div class="type-img">
             <i class="ti ti-layout-2"></i>
-            <div class="type-img-zoom"><i class="ti ti-zoom-in"></i></div>
           </div>
           <div class="type-body">
             <div class="type-name">84㎡ B타입</div>
@@ -772,7 +751,7 @@
     </section>
 
     <!-- 모델하우스 (PC 가로 3컬럼) -->
-    <section class="sec" id="modelhouse">
+    <section class="sec fade-in" id="modelhouse">
       <div class="sec-title">모델하우스</div>
       <div class="mh-unified">
         <div class="mh-item">
@@ -796,7 +775,7 @@
     </section>
 
     <!-- 상담 접수 폼 -->
-    <section class="contact-sec" id="contact">
+    <section class="contact-sec fade-in" id="contact">
       <div class="contact-wrap">
         <div class="contact-inner">
           <div class="contact-kicker">분양 상담 신청</div>
