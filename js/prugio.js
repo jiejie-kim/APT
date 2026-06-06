@@ -45,32 +45,48 @@ const typeImages = {
     { src: "images/prugio/prugio_type_80a_5.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
     { src: "images/prugio/prugio_type_80a_6.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
     { src: "images/prugio/prugio_type_80a_7.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
-
-
-  ],
-  "74A": [
-    { src: "images/prugio/74a_plan.webp", caption: "74A 평면도" },
-    { src: "images/prugio/74a_living.webp", caption: "74A 거실" },
-    { src: "images/prugio/74a_kitchen.webp", caption: "74A 주방" },
-    { src: "images/prugio/74a_room.webp", caption: "74A 방" },
-  ],
-  "74B": [
-    { src: "images/prugio/74b_plan.webp", caption: "74B 평면도" },
-    { src: "images/prugio/74b_living.webp", caption: "74B 거실" },
-    { src: "images/prugio/74b_kitchen.webp", caption: "74B 주방" },
-    { src: "images/prugio/74b_room.webp", caption: "74B 방" },
   ],
   "84A": [
-    { src: "images/prugio/84a_plan.webp", caption: "84A 평면도" },
-    { src: "images/prugio/84a_living.webp", caption: "84A 거실" },
-    { src: "images/prugio/84a_kitchen.webp", caption: "84A 주방" },
-    { src: "images/prugio/84a_room.webp", caption: "84A 방" },
+    { src: "images/prugio/74a_plan.webp", caption: "84A 평면도" },
+    { src: "images/prugio/74a_living.webp", caption: "84A 거실" },
+    { src: "images/prugio/74a_kitchen.webp", caption: "84A 주방" },
+    { src: "images/prugio/74a_room.webp", caption: "84A 방" },
   ],
   "84B": [
-    { src: "images/prugio/84b_plan.webp", caption: "84B 평면도" },
-    { src: "images/prugio/84b_living.webp", caption: "84B 거실" },
-    { src: "images/prugio/84b_kitchen.webp", caption: "84B 주방" },
-    { src: "images/prugio/84b_room.webp", caption: "84B 방" },
+    { src: "images/prugio/74b_plan.webp", caption: "84B 평면도" },
+    { src: "images/prugio/74b_living.webp", caption: "84B 거실" },
+    { src: "images/prugio/74b_kitchen.webp", caption: "84B 주방" },
+    { src: "images/prugio/74b_room.webp", caption: "84B 방" },
+  ],
+  "84C": [
+    { src: "images/prugio/84a_plan.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84a_living.webp", caption: "84C 거실" },
+    { src: "images/prugio/84a_kitchen.webp", caption: "84C 주방" },
+    { src: "images/prugio/84a_room.webp", caption: "84C 방" },
+  ],
+  "84D": [
+    { src: "images/prugio/84b_plan.webp", caption: "84D 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "84D 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "84D 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "84D 방" },
+  ],
+  "84E": [
+    { src: "images/prugio/84b_plan.webp", caption: "84E 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "84E 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "84E 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "84E 방" },
+  ],
+  "134A": [
+    { src: "images/prugio/84b_plan.webp", caption: "134A 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "134A 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "134A 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "134A 방" },
+  ],
+  "134B": [
+    { src: "images/prugio/84b_plan.webp", caption: "134B 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "134B 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "134B 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "134B 방" },
   ],
 };
 let currentTypeImgs = [];
@@ -123,10 +139,13 @@ document.addEventListener("keydown", (e) => {
 /* ══ 타입 데이터 ══ */
 const typeData = {
   "80A": { name: "80㎡ A타입", area: "공급 105.97㎡ / 전용 80.26㎡", rooms: "방3 / 욕실2", units: "218세대", price: "4.8억 ~ 5.5억", badge: "인기 타입" },
-  "74A": { name: "74㎡ A타입", area: "공급 98.10㎡ / 전용 74.33㎡", rooms: "방3 / 욕실2", units: "192세대", price: "5.9억 ~ 6.8억" },
-  "74B": { name: "74㎡ B타입", area: "공급 97.42㎡ / 전용 74.12㎡", rooms: "방3 / 욕실2", units: "155세대", price: "5.9억 ~ 6.5억" },
-  "84A": { name: "84㎡ A타입", area: "공급 110.77㎡ / 전용 84.89㎡", rooms: "방4 / 욕실2", units: "148세대", price: "6.8억 ~ 9.2억", badge: "조망 우수" },
-  "84B": { name: "84㎡ B타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "84A": { name: "84㎡ A타입", area: "공급 98.10㎡ / 전용 74.33㎡", rooms: "방3 / 욕실2", units: "192세대", price: "5.9억 ~ 6.8억" },
+  "84B": { name: "84㎡ B타입", area: "공급 97.42㎡ / 전용 74.12㎡", rooms: "방3 / 욕실2", units: "155세대", price: "5.9억 ~ 6.5억" },
+  "84C": { name: "84㎡ C타입", area: "공급 110.77㎡ / 전용 84.89㎡", rooms: "방4 / 욕실2", units: "148세대", price: "6.8억 ~ 9.2억", badge: "조망 우수" },
+  "84D": { name: "84㎡ D타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "84E": { name: "84㎡ E타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "134A": { name: "134㎡ A타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "134B": { name: "134㎡ B타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
 };
 
 /* ── 타입 카드 클릭 ── */
@@ -221,7 +240,7 @@ function pick(card, typeKey) {
 function switchType(size, btn) {
   document.querySelectorAll(".type-tab").forEach(t => t.classList.remove("on"));
   btn.classList.add("on");
-  ["80", "74", "84"].forEach(s => {
+  ["80", "84", "134"].forEach(s => {
     const el = document.getElementById("t" + s);
     if (el) el.style.display = s === size ? "grid" : "none";
   });
@@ -229,7 +248,7 @@ function switchType(size, btn) {
   const firstCard = document.querySelector("#t" + size + " .type-card");
   if (firstCard) {
     firstCard.classList.add("on");
-    const key = size + firstCard.querySelector(".type-name").textContent.match(/[A-C]/)?.[0];
+    const key = size + firstCard.querySelector(".type-name").textContent.match(/[A-E]/)?.[0];
     if (key && typeData[key]) pick(firstCard, key);
   }
 }
@@ -516,16 +535,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 스크롤 페이드인
   const fadeEls = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver((entries) => {
+  const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // 한 번만 실행
+        fadeObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
+  fadeEls.forEach(el => fadeObserver.observe(el));
 
-  fadeEls.forEach(el => observer.observe(el));
+  // 전체 팝업: 타입선택 섹션 진입 시 (새로고침마다 표시)
+  const typesSection = document.getElementById("types");
+  if (typesSection) {
+    let shown = false;
+    const popupObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !shown) {
+          shown = true;
+          setTimeout(() => openContractPopup(), 600);
+        }
+      });
+    }, { threshold: 0.3 });
+    popupObserver.observe(typesSection);
+  }
+
+  // 미니배너: 타입선택 섹션 진입 시 표시, 벗어나면 숨김
+  const typesForBanner = document.getElementById("types");
+  if (typesForBanner) {
+    const bannerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const banner = document.getElementById("miniBanner");
+        if (!banner) return;
+        if (entry.isIntersecting) {
+          banner.classList.add("open");
+        } else {
+          banner.classList.remove("open");
+        }
+      });
+    }, { threshold: 0.1 });
+    bannerObserver.observe(typesForBanner);
+  }
 });
 
 
@@ -574,7 +624,8 @@ function openTypeModal(d, imgs) {
   });
 
   // 스펙 정보
-  document.getElementById("typeModalPrice").textContent = d.price;
+  document.getElementById("typeModalPrice").innerHTML =
+    d.price + '<div style="margin-top:6px;font-size:11px;font-weight:500;color:var(--gold);background:rgba(184,145,58,.1);padding:4px 10px;border-radius:20px;display:inline-block">💡 계약금 500만원 · 중도금 대출 가능</div>';
   document.getElementById("typeModalRows").innerHTML = [
     { k: "방 구조", v: d.rooms },
     { k: "세대수", v: d.units },
@@ -600,5 +651,31 @@ function closeTypeModal() {
   const modal = document.getElementById("typeModal");
   if (overlay) overlay.classList.remove("open");
   if (modal) modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+/* ── 우측 하단 미니 배너 (타입선택 섹션에서만 표시) ── */
+
+function closeMiniBanner() {
+  const banner = document.getElementById("miniBanner");
+  if (banner) banner.classList.remove("open");
+}
+
+/* ── 계약금 팝업 (새로고침마다 표시) ── */
+function openContractPopup() {
+  const overlay = document.getElementById("contractPopupOverlay");
+  const popup   = document.getElementById("contractPopup");
+  if (!overlay || !popup) return;
+  overlay.classList.add("open");
+  popup.style.display = "block";
+  requestAnimationFrame(() => requestAnimationFrame(() => popup.classList.add("open")));
+  document.body.style.overflow = "hidden";
+}
+
+function closeContractPopup() {
+  const overlay = document.getElementById("contractPopupOverlay");
+  const popup   = document.getElementById("contractPopup");
+  if (overlay) overlay.classList.remove("open");
+  if (popup)   popup.classList.remove("open");
   document.body.style.overflow = "";
 }

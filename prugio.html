@@ -90,6 +90,7 @@
         <div class="pc-line">
           <span class="pc-key">입주 예정</span><span class="pc-val">2026년 12월</span>
         </div>
+        <div class="pc-contract-hint">💡 계약금 500만원 · 중도금 대출 가능</div>
         <div class="pc-dday">⏰ 마감 임박</div>
         <button class="pc-btn-primary" onclick="scrollToContact()">
           분양 상담 신청하기
@@ -579,19 +580,20 @@
         <button class="type-tab on" onclick="switchType('80', this)">
           80㎡
         </button>
-        <button class="type-tab" onclick="switchType('74', this)">
-          74㎡
-        </button>
         <button class="type-tab" onclick="switchType('84', this)">
           84㎡
         </button>
+        <button class="type-tab" onclick="switchType('134', this)">
+          134㎡
+        </button>
       </div>
 
-      <!-- 59㎡ -->
+      <!-- 80㎡ -->
       <div class="type-grid" id="t80">
         <div class="type-card on" onclick="pickWithModal(this, '80A')">
           <div class="type-img">
             <i class="ti ti-layout-2"><img src="images/prugio/prugio_type_80a_1.png"></i>
+            <span class="pop-badge">인기 타입</span>
           </div>
           <div class="type-body">
             <div class="type-name">80㎡ A타입</div>
@@ -607,41 +609,22 @@
                 <span class="type-row-k">분양가</span><span class="type-row-v">4.8억 ~ 5.5억</span>
               </div>
             </div>
-            <span class="pop-badge">인기 타입</span>
           </div>
           <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('80A')"><i class="ti ti-search"></i> 상세보기</button>
         </div>
-        <!-- <div class="type-card" onclick="pickWithModal(this, '59B')">
-          <div class="type-img">
-            <i class="ti ti-layout-2"></i>
-          </div>
-          <div class="type-body">
-            <div class="type-name">59㎡ B타입</div>
-            <div class="type-area">공급 78.84㎡ / 전용 59.56㎡</div>
-            <div class="type-rows">
-              <div class="type-row">
-                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
-              </div>
-              <div class="type-row">
-                <span class="type-row-k">세대수</span><span class="type-row-v">186세대</span>
-              </div>
-              <div class="type-row">
-                <span class="type-row-k">분양가</span><span class="type-row-v">4.8억 ~ 5.4억</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
+
 
       </div>
 
-      <!-- 74㎡ -->
-      <div class="type-grid" id="t74" style="display: none">
-        <div class="type-card on" onclick="pickWithModal(this, '74A')">
+      <!-- 84㎡ -->
+      <div class="type-grid" id="t84" style="display: none">
+
+        <div class="type-card on" onclick="pickWithModal(this, '84A')">
           <div class="type-img">
             <i class="ti ti-layout-2"></i>
           </div>
           <div class="type-body">
-            <div class="type-name">74㎡ A타입</div>
+            <div class="type-name">84㎡ A타입</div>
             <div class="type-area">공급 98.10㎡ / 전용 74.33㎡</div>
             <div class="type-rows">
               <div class="type-row">
@@ -657,12 +640,13 @@
           </div>
           <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('74A')"><i class="ti ti-search"></i> 상세보기</button>
         </div>
-        <div class="type-card" onclick="pickWithModal(this, '74B')">
+
+        <div class="type-card" onclick="pickWithModal(this, '84B')">
           <div class="type-img">
             <i class="ti ti-layout-2"></i>
           </div>
           <div class="type-body">
-            <div class="type-name">74㎡ B타입</div>
+            <div class="type-name">84㎡ B타입</div>
             <div class="type-area">공급 97.42㎡ / 전용 74.12㎡</div>
             <div class="type-rows">
               <div class="type-row">
@@ -678,16 +662,85 @@
           </div>
           <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('74B')"><i class="ti ti-search"></i> 상세보기</button>
         </div>
-      </div>
 
-      <!-- 84㎡ -->
-      <div class="type-grid" id="t84" style="display: none">
-        <div class="type-card on" onclick="pickWithModal(this, '84A')">
+        <div class="type-card" onclick="pickWithModal(this, '84C')">
           <div class="type-img">
             <i class="ti ti-layout-2"></i>
           </div>
           <div class="type-body">
-            <div class="type-name">84㎡ A타입</div>
+            <div class="type-name">84㎡ C타입</div>
+            <div class="type-area">공급 97.42㎡ / 전용 74.12㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">155세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">5.9억 ~ 6.5억</span>
+              </div>
+            </div>
+          </div>
+          <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('74B')"><i class="ti ti-search"></i> 상세보기</button>
+        </div>
+
+        <div class="type-card" onclick="pickWithModal(this, '84D')">
+          <div class="type-img">
+            <i class="ti ti-layout-2"></i>
+          </div>
+          <div class="type-body">
+            <div class="type-name">84㎡ D타입</div>
+            <div class="type-area">공급 97.42㎡ / 전용 74.12㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">155세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">5.9억 ~ 6.5억</span>
+              </div>
+            </div>
+          </div>
+          <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('74B')"><i class="ti ti-search"></i> 상세보기</button>
+        </div>
+
+        <div class="type-card" onclick="pickWithModal(this, '84E')">
+          <div class="type-img">
+            <i class="ti ti-layout-2"></i>
+          </div>
+          <div class="type-body">
+            <div class="type-name">84㎡ E타입</div>
+            <div class="type-area">공급 97.42㎡ / 전용 74.12㎡</div>
+            <div class="type-rows">
+              <div class="type-row">
+                <span class="type-row-k">구조</span><span class="type-row-v">방3 / 욕실2</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">세대수</span><span class="type-row-v">155세대</span>
+              </div>
+              <div class="type-row">
+                <span class="type-row-k">분양가</span><span class="type-row-v">5.9억 ~ 6.5억</span>
+              </div>
+            </div>
+          </div>
+          <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('74B')"><i class="ti ti-search"></i> 상세보기</button>
+        </div>
+
+      </div>
+
+      <!-- 134㎡ -->
+      <div class="type-grid" id="t134" style="display: none">
+
+        <div class="type-card on" onclick="pickWithModal(this, '134A')">
+          <div class="type-img">
+            <span class="pop-badge">조망 우수</span>
+            <i class="ti ti-layout-2"></i>
+          </div>
+          <div class="type-body">
+            <div class="type-name">134㎡ A타입</div>
             <div class="type-area">공급 110.77㎡ / 전용 84.89㎡</div>
             <div class="type-rows">
               <div class="type-row">
@@ -700,16 +753,15 @@
                 <span class="type-row-k">분양가</span><span class="type-row-v">6.8억 ~ 9.2억</span>
               </div>
             </div>
-            <span class="pop-badge">조망 우수</span>
           </div>
           <button class="type-detail-btn" onclick="event.stopPropagation();pickModal('84A')"><i class="ti ti-search"></i> 상세보기</button>
         </div>
-        <div class="type-card" onclick="pickWithModal(this, '84B')">
+        <div class="type-card" onclick="pickWithModal(this, '134B')">
           <div class="type-img">
             <i class="ti ti-layout-2"></i>
           </div>
           <div class="type-body">
-            <div class="type-name">84㎡ B타입</div>
+            <div class="type-name">134㎡ B타입</div>
             <div class="type-area">공급 110.22㎡ / 전용 84.45㎡</div>
             <div class="type-rows">
               <div class="type-row">
@@ -893,6 +945,44 @@
     <button class="type-modal-cta" onclick="scrollToContact(); closeTypeModal()">
       <i class="ti ti-send"></i> 이 타입 상담 신청
     </button>
+  </div>
+
+
+  <!-- 우측 하단 미니 고정 배너 -->
+  <div class="mini-banner" id="miniBanner">
+    <button class="mini-banner-close" onclick="closeMiniBanner()"><i class="ti ti-x"></i></button>
+    <div class="mini-banner-content">
+      <div class="mini-banner-emoji">🏠</div>
+      <div>
+        <div class="mini-banner-title">계약금 단 <em>500만원</em></div>
+        <div class="mini-banner-desc">중도금 대출 가능 · 전문가 무료 상담</div>
+      </div>
+    </div>
+    <button class="mini-banner-cta" onclick="scrollToContact(); closeMiniBanner()">상담 신청 →</button>
+  </div>
+
+
+  <!-- 계약금 팝업 -->
+  <div class="contract-popup-overlay" id="contractPopupOverlay" onclick="closeContractPopup()"></div>
+  <div class="contract-popup" id="contractPopup">
+    <button class="contract-popup-close" onclick="closeContractPopup()"><i class="ti ti-x"></i></button>
+    <div class="contract-popup-icon">💰</div>
+    <div class="contract-popup-title">지금 바로 시작할 수 있어요!</div>
+    <div class="contract-popup-price">계약금 단 <em>500만원</em></div>
+    <div class="contract-popup-desc">
+      분양가가 부담스러우신가요?<br>
+      계약금 500만원으로 내 집 마련을 시작하세요.<br>
+      중도금·잔금은 입주 전까지 여유롭게 준비 가능합니다.
+    </div>
+    <div class="contract-popup-tags">
+      <span>✅ 계약금 500만원</span>
+      <span>✅ 중도금 대출 가능</span>
+      <span>✅ 전문가 무료 상담</span>
+    </div>
+    <button class="contract-popup-cta" onclick="scrollToContact(); closeContractPopup()">
+      <i class="ti ti-send"></i> 무료 상담 신청하기
+    </button>
+    <button class="contract-popup-skip" onclick="closeContractPopup()">괜찮아요, 더 볼게요</button>
   </div>
 
   <!-- 갤러리 라이트박스 -->
