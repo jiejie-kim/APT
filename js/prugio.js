@@ -545,20 +545,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 });
   fadeEls.forEach(el => fadeObserver.observe(el));
 
-  // 전체 팝업: 타입선택 섹션 진입 시 (새로고침마다 표시)
-  const typesSection = document.getElementById("types");
-  if (typesSection) {
-    let shown = false;
-    const popupObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !shown) {
-          shown = true;
-          setTimeout(() => openContractPopup(), 600);
-        }
-      });
-    }, { threshold: 0.3 });
-    popupObserver.observe(typesSection);
-  }
+
+  // 전체 팝업: 페이지 진입 2초 후 표시
+  setTimeout(() => openContractPopup(), 2000);
 
   // 미니배너: 타입선택 섹션 진입 시 표시, 벗어나면 숨김
   const typesForBanner = document.getElementById("types");
@@ -664,7 +653,7 @@ function closeMiniBanner() {
 /* ── 계약금 팝업 (새로고침마다 표시) ── */
 function openContractPopup() {
   const overlay = document.getElementById("contractPopupOverlay");
-  const popup   = document.getElementById("contractPopup");
+  const popup = document.getElementById("contractPopup");
   if (!overlay || !popup) return;
   overlay.classList.add("open");
   popup.style.display = "block";
@@ -674,8 +663,8 @@ function openContractPopup() {
 
 function closeContractPopup() {
   const overlay = document.getElementById("contractPopupOverlay");
-  const popup   = document.getElementById("contractPopup");
+  const popup = document.getElementById("contractPopup");
   if (overlay) overlay.classList.remove("open");
-  if (popup)   popup.classList.remove("open");
+  if (popup) popup.classList.remove("open");
   document.body.style.overflow = "";
 }
