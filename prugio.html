@@ -893,6 +893,29 @@
     </div>
   </section>
 
+
+  <!-- 모바일 타입 바텀시트 모달 -->
+  <div class="type-modal-overlay" id="typeModalOverlay" onclick="closeTypeModal()"></div>
+  <div class="type-modal" id="typeModal">
+    <div class="type-modal-handle"></div>
+    <div class="type-modal-header">
+      <span class="type-modal-title" id="typeModalTitle">타입 상세</span>
+      <button class="type-modal-close" onclick="closeTypeModal()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="type-modal-img" id="typeModalImg">
+      <i class="ti ti-layout-2"></i>
+    </div>
+    <div class="type-modal-sub" id="typeModalSub"></div>
+    <div class="type-modal-info">
+      <div class="type-modal-price-lbl">분양가</div>
+      <div class="type-modal-price" id="typeModalPrice"></div>
+      <div class="type-modal-rows" id="typeModalRows"></div>
+    </div>
+    <button class="type-modal-cta" onclick="scrollToContact(); closeTypeModal()">
+      <i class="ti ti-send"></i> 이 타입 상담 신청
+    </button>
+  </div>
+
   <!-- 갤러리 라이트박스 -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lb-close" onclick="closeLightbox()">
