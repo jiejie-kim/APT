@@ -494,11 +494,24 @@ function scrollToContact() {
 }
 
 let scrollTimer = null;
+
+function scrollSubNavToActive() {
+  const subNav = document.querySelector(".sub-nav");
+  const activeBtn = subNav && subNav.querySelector(".sub-btn.on");
+  if (!subNav || !activeBtn) return;
+  const btnLeft = activeBtn.offsetLeft;
+  const btnWidth = activeBtn.offsetWidth;
+  const navWidth = subNav.offsetWidth;
+  const target = btnLeft - navWidth / 2 + btnWidth / 2;
+  subNav.scrollTo({ left: target, behavior: "smooth" });
+}
+
 function goTo(id) {
   const el = document.getElementById(id);
   if (!el) return;
   window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 112, behavior: "smooth" });
   subBtns.forEach((b, i) => b.classList.toggle("on", secIds[i] === id));
+  scrollSubNavToActive();
   scrollTimer = setTimeout(() => { scrollTimer = null; }, 500);
 }
 
@@ -514,6 +527,7 @@ window.addEventListener("scroll", () => {
     if (el && el.getBoundingClientRect().top <= offset) cur = id;
   });
   subBtns.forEach((b, i) => b.classList.toggle("on", secIds[i] === cur || (!cur && i === 0)));
+  scrollSubNavToActive();
 }, { passive: true });
 
 async function logClick(type) {
@@ -532,6 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initInvestSlider();
   initOptionSlider();
   initCommunitySlider();
+  initModalDrag();
   window.scrollTo(0, 0);
 
   // 스크롤 페이드인
@@ -605,7 +620,8 @@ function openTypeModal(d, imgs) {
     div.innerHTML = img.src
       ? `<img src="${img.src}" alt="${img.caption}">`
       : `<i class="ti ti-layout-2"></i>`;
-    div.addEventListener("click", () => {
+    div.addEventListener("click", (e) => {
+      e.stopPropagation();
       imgEl.innerHTML = `<img src="${img.src}" alt="${img.caption}">`;
       subEl.querySelectorAll(".tms").forEach(s => s.classList.remove("on"));
       div.classList.add("on");
@@ -630,22 +646,19 @@ function openTypeModal(d, imgs) {
   // 모달 열기
   overlay.classList.add("open");
   modal.style.display = "flex";
+  modal.style.pointerEvents = "auto";
   requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add("open")));
   document.body.style.overflow = "hidden";
   document.body.classList.add("type-modal-open");
 
   // 스크롤 맨 위로
   modal.scrollTop = 0;
-
-  // 드래그로 닫기 (핸들 + 헤더 영역)
-  initModalDrag(modal);
 }
 
-/* ── 바텀시트 드래그로 닫기 ── */
-function initModalDrag(modal) {
-  // 이미 등록된 리스너 중복 방지
-  if (modal._dragInit) return;
-  modal._dragInit = true;
+/* ── 바텀시트 드래그로 닫기 (DOMContentLoaded에서 1회 등록) ── */
+function initModalDrag() {
+  const modal = document.getElementById("typeModal");
+  if (!modal) return;
 
   const handle = modal.querySelector(".type-modal-handle");
   const header = modal.querySelector(".type-modal-header");
@@ -665,7 +678,7 @@ function initModalDrag(modal) {
   function onTouchMove(e) {
     if (!dragging) return;
     const dy = e.touches[0].clientY - startY;
-    if (dy < 0) return; // 위로 드래그 무시
+    if (dy < 0) return;
     currentY = dy;
     modal.style.transform = `translateY(${dy}px)`;
   }
@@ -686,6 +699,9 @@ function initModalDrag(modal) {
     el.addEventListener("touchmove", onTouchMove, { passive: true });
     el.addEventListener("touchend", onTouchEnd);
   });
+
+  // 모달 내부 클릭이 overlay로 버블링되지 않도록 차단
+  modal.addEventListener("click", e => e.stopPropagation());
 }
 
 function closeTypeModal() {
@@ -698,10 +714,10 @@ function closeTypeModal() {
     setTimeout(() => {
       modal.style.display = "none";
       modal.style.pointerEvents = "none";
-      modal._dragInit = false; // 다음 열기 때 재등록
     }, 350);
   }
   document.body.style.overflow = "";
+  document.body.classList.remove("type-modal-open");
 }
 
 /* ── 우측 하단 미니 배너 (타입선택 섹션에서만 표시) ── */
