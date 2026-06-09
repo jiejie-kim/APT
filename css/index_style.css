@@ -1233,9 +1233,9 @@ footer {
 .floating-bar {
   position: fixed;
   bottom: 20px;
+  margin: 0 auto;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 500;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1247,7 +1247,11 @@ footer {
   box-shadow: 0 8px 32px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .06);
   padding: 5px;
   white-space: nowrap;
-  min-width: 280px
+  width: calc(100vw - 48px);
+  max-width: 320px;
+  min-width: 0;
+  pointer-events: none;
+  z-index: 999;
 }
 
 .fl-btn {
@@ -1256,7 +1260,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
   font-size: 13px;
   font-weight: 600;
   border: none;
@@ -1267,7 +1271,9 @@ footer {
   border-radius: 100px;
   transition: background .15s, color .15s;
   text-decoration: none;
-  padding: 0 16px
+  padding: 0 8px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .fl-btn:hover {

@@ -10,6 +10,11 @@
         this.onload = null;
         this.rel = 'stylesheet';
       " href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+    as="style" onload="this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  </noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
   <script src="js/prugio.js" defer></script>
 </head>
@@ -23,7 +28,8 @@
       <a href="#">분양 일정</a>
       <a href="#">회사 소개</a>
     </div> -->
-    <a class="nav-cta" href="tel:1522-5681" onclick="logClick('전화 클릭 - 상단 네비')"><i class="ti ti-phone"></i> 1522-5681</a>
+    <a class="nav-cta" href="tel:1522-5681" onclick="logClick('전화 클릭 - 상단 네비')"><i class="ti ti-phone"></i>
+      1522-5681</a>
   </nav>
 
   <!-- SUB NAV -->
