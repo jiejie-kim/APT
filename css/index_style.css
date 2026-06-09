@@ -146,7 +146,9 @@ img {
   border-radius: var(--r);
   font-size: 13px;
   font-weight: 700;
-  transition: background .2s
+  transition: background .2s;
+  text-align: center;
+  align-content: center;
 }
 
 .nav-cta:hover {

@@ -668,8 +668,19 @@ function openContractPopup() {
 
 function closeContractPopup() {
   const overlay = document.getElementById("contractPopupOverlay");
-  const popup = document.getElementById("contractPopup");
-  if (overlay) overlay.classList.remove("open");
-  if (popup) popup.classList.remove("open");
+  const popup   = document.getElementById("contractPopup");
+  if (overlay) {
+    overlay.classList.remove("open");
+    overlay.style.display    = "none";
+    overlay.style.pointerEvents = "none";
+  }
+  if (popup) {
+    popup.classList.remove("open");
+    // 애니메이션 끝난 후 완전히 숨김
+    setTimeout(() => {
+      popup.style.display     = "none";
+      popup.style.pointerEvents = "none";
+    }, 320);
+  }
   document.body.style.overflow = "";
 }

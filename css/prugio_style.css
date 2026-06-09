@@ -124,7 +124,9 @@ img {
   border-radius: var(--r);
   font-size: 13px;
   font-weight: 700;
-  transition: background .2s
+  transition: background .2s;
+  text-align: center;
+  align-content: center;
 }
 
 .nav-cta:hover {
@@ -1559,10 +1561,7 @@ img {
 }
 
 .type-card,
-.type-tab {
-  position: relative;
-  z-index: 1;
-}
+
 
 .type-card:hover {
   border-color: var(--navy2);
@@ -2624,7 +2623,8 @@ footer {
     transform: none;
     bottom: 14px;
     min-width: unset;
-    width: calc(100% - 32px)
+    width: calc(100% - 32px);
+    pointer-events: none;
   }
 
   .fl-btn {
@@ -2684,7 +2684,7 @@ footer {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, .5);
-  z-index: 1001;
+  z-index: 800;
   pointer-events: none;
 }
 
@@ -2707,7 +2707,6 @@ footer {
   transition: transform .35s cubic-bezier(.4, 0, .2, 1);
   display: none;
   pointer-events: none;
-  z-index: 1001;
 }
 
 .type-modal.open {
@@ -2931,6 +2930,7 @@ footer {
   align-items: center;
   gap: 6px;
   transform: translateY(16px);
+  z-index: 9000;
 }
 
 .mini-banner.open {
@@ -3053,13 +3053,11 @@ footer {
   box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
   transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), opacity .3s ease;
   opacity: 0;
-  pointer-events: none;
 }
 
 .contract-popup.open {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
-  pointer-events: auto;
 }
 
 .contract-popup-close {
