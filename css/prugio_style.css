@@ -2617,6 +2617,16 @@ footer {
     padding: 40px 0 100px
   }
 
+  .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-img {
+    order: -1;
+    min-height: 220px;
+  }
+
   .floating-bar {
     left: 16px;
     right: 16px;
@@ -2635,7 +2645,7 @@ footer {
 
 @media(max-width:480px) {
   .type-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr 1fr
   }
 
   .d-name {
@@ -2869,7 +2879,7 @@ footer {
   justify-content: center;
   gap: 6px;
   width: calc(100% - 28px);
-  margin: 8px 14px 28px;
+  margin: 8px 14px 100px;
   padding: 13px;
   background: var(--navy);
   color: #fff;
