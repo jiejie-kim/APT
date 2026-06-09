@@ -233,7 +233,7 @@ function pick(card, typeKey) {
   subImgCurrent = 0;
   updateSubSlider();
   panel.classList.add("open");
-  setTimeout(() => panel.scrollIntoView({ behavior: "smooth", block: "nearest" }), 50);
+  // scrollIntoView 제거 - 강제 스크롤 방지
 }
 
 /* ── 타입 탭 전환 ── */
@@ -628,6 +628,7 @@ function openTypeModal(d, imgs) {
 
   // 모달 열기
   overlay.classList.add("open");
+  modal.style.display = "block";
   modal.classList.add("open");
   document.body.style.overflow = "hidden";
 
@@ -639,7 +640,11 @@ function closeTypeModal() {
   const overlay = document.getElementById("typeModalOverlay");
   const modal = document.getElementById("typeModal");
   if (overlay) overlay.classList.remove("open");
-  if (modal) modal.classList.remove("open");
+  if (modal) {
+    modal.classList.remove("open");
+    modal.style.display = "none";
+    modal.style.pointerEvents = "none";
+  }
   document.body.style.overflow = "";
 }
 
