@@ -186,12 +186,12 @@ async function mainSubmit() {
         page: "메인페이지",
       }),
     });
-  } catch (e) {}
+  } catch (e) { }
   alert(
     "접수 완료!\n담당자가 곧 연락드리겠습니다.\n\n성함: " +
-      name +
-      "\n연락처: " +
-      phone,
+    name +
+    "\n연락처: " +
+    phone,
   );
   document.getElementById("m-name").value = "";
   document.getElementById("m-phone").value = "";
@@ -202,6 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
   renderList();
   initSlider();
   initPhoneFormat("m-phone");
+  initFadeIn();
 
   // 반응형 전환 시 카드 display 재적용
   window.addEventListener("resize", function () {
@@ -211,6 +212,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function initFadeIn() {
+  const els = document.querySelectorAll(".fade-in");
+
+  const initiallyVisible = new Set();
+  els.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      initiallyVisible.add(el);
+    }
+  });
+
+  function checkVisible() {
+    els.forEach(el => {
+      if (el.classList.contains("visible")) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        if (initiallyVisible.has(el)) {
+          if (rect.top < window.innerHeight - 100) {
+            el.classList.add("visible");
+          }
+        } else {
+          el.classList.add("visible");
+        }
+      }
+    });
+  }
+
+  window.addEventListener("scroll", checkVisible, { passive: true });
+  setTimeout(checkVisible, 500);
+
+  // ✅ 함수 안에 있어야 함
+  const appealSection = document.getElementById("appealSection");
+  if (appealSection) {
+    const appealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll(".appeal-ani");
+          items.forEach((item, i) => {
+            setTimeout(() => item.classList.add("visible"), i * 100);
+          });
+          appealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    appealObserver.observe(appealSection);
+  }
+}
 
 async function logClick(type) {
   const now = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
@@ -227,5 +276,5 @@ async function logClick(type) {
         page: page
       })
     });
-  } catch(e) {}
+  } catch (e) { }
 }

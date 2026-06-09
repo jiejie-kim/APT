@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
   </noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
-  <script src="js/index.js"></script>
+  <script src="js/index.js" defer></script>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div>
+      <div class="fade-in-hero">
         <div class="hero-kicker">
           <i class="ti ti-shield-check"></i><span>신뢰 분양 플랫폼</span>
         </div>
@@ -85,7 +85,7 @@
           </button>
         </div>
       </div>
-      <div class="hero-right">
+      <div class="hero-right fade-in-hero fade-in-hero--delay">
         <div class="hero-img-grid">
           <div class="h-img h-img-main">
             <img src="images/index/main_1.webp" alt="단지 전경">
@@ -133,7 +133,7 @@
   </section>
 
   <!-- TRUST STRIP -->
-  <div class="trust-strip">
+  <div class="trust-strip fade-in">
     <div class="trust-inner">
       <div class="trust-item">
         <i class="ti ti-award"></i><span>분양 신뢰 브랜드</span>
@@ -158,9 +158,9 @@
   </div>
 
   <!-- APPEAL -->
-  <section class="appeal">
+  <section class="appeal" id="appealSection">
     <div class="appeal-inner">
-      <div class="appeal-item">
+      <div class="appeal-item appeal-ani">
         <div class="appeal-icon"><i class="ti ti-cpu"></i></div>
         <div class="appeal-num">01</div>
         <div class="appeal-title">삼성·SK 반도체 밸리<br />최대 첨단 산업 수혜</div>
@@ -168,7 +168,7 @@
           대기업이 선택한 처인구의 중심, 삼성과 SK하이닉스가 주도하는 반도체 메가 클러스터의 핵심 수혜 단지. 든든한 배후 수요와 지가 상승을 견인할 확실한 미래 투자입니다.
         </div>
       </div>
-      <div class="appeal-item">
+      <div class="appeal-item appeal-ani">
         <div class="appeal-icon"><i class="ti ti-school"></i></div>
         <div class="appeal-num">02</div>
         <div class="appeal-title">학군+자연환경<br />프리미엄 생활</div>
@@ -177,7 +177,7 @@
           3박자를 갖춘 단지는 실수요와 투자 수요 모두를 끌어당깁니다.
         </div>
       </div>
-      <div class="appeal-item">
+      <div class="appeal-item appeal-ani">
         <div class="appeal-icon"><i class="ti ti-trending-up"></i></div>
         <div class="appeal-num">03</div>
         <div class="appeal-title">지금이 적기<br />분양가 상승 전</div>
@@ -242,9 +242,8 @@
                   </div>
                 </div>
                 <div class="tag-row">
-                  <span class="tag">경전철 인접</span>
-                  <span class="tag">대형 공원</span>
-                  <span class="tag">GTX 예정</span>
+                  <span class="tag">SK하이닉스 반도체클러스터</span>
+                  <span class="tag">삼성전자 반도체클러스터</span>
                 </div>
               </div>
               <div class="invest-row">
@@ -305,13 +304,12 @@
                 <div class="tag-row">
                   <span class="tag">SK하이닉스 반도체클러스터</span>
                   <span class="tag">삼성전자 반도체클러스터</span>
-                  <span class="tag">대형공원 공세권 프리미엄</span>
                 </div>
               </div>
               <div class="invest-row">
                 <span class="invest-tag">📈 대기업 반도체</span>
                 <span class="invest-tag">🏫 초·중교 도보권</span>
-                <span class="invest-tag">🏡 브랜드 아파트</span>
+                <span class="invest-tag">🏡 대형공원 프리미엄</span>
               </div>
             </div>
           </div>
@@ -370,11 +368,11 @@
                 <div class="tag-row">
                   <span class="tag">SK하이닉스 반도체클러스터</span>
                   <span class="tag">삼성전자 반도체클러스터</span>
-                  <span class="tag">중대형 아파트</span>
                 </div>
               </div>
               <div class="invest-row">
                 <span class="invest-tag">📈 대기업 반도체</span>
+                <span class="invest-tag">🏡 중대형 아파트</span>
                 <span class="invest-tag" style="opacity: 0.7">✅ 100% 계약 완료</span>
               </div>
             </div>
@@ -414,7 +412,7 @@
   <!-- /.list-section -->
 
   <!-- SOCIAL PROOF SLIDER -->
-  <section class="proof" id="company-section">
+  <section class="proof fade-in" id="company-section">
     <div class="proof-inner">
       <div class="proof-head">
         <div class="proof-kicker">고객 후기</div>
@@ -508,7 +506,7 @@
   </section>
 
   <!-- CTA BAND -->
-  <section class="cta-band" id="contact-section">
+  <section class="cta-band fade-in" id="contact-section">
     <div class="cta-band-inner">
       <div class="cta-band-text">
         <h2>지금 바로 전문가와 상담하세요</h2>
@@ -529,7 +527,7 @@
   </section>
 
   <!-- 모델하우스 / 방문상담 -->
-  <section class="visit-cta" id="visit-section">
+  <section class="visit-cta fade-in" id="visit-section">
     <div class="visit-inner">
       <div class="visit-card">
         <div class="visit-icon"><i class="ti ti-home"></i></div>
