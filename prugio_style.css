@@ -30,15 +30,17 @@
   padding: 0
 }
 
-html {
-  scroll-behavior: smooth
-}
-
 body {
   font-family: 'Pretendard', -apple-system, sans-serif;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 a {
@@ -566,17 +568,15 @@ img {
 .lb-img {
   max-width: 95vw;
   max-height: 90vh;
-  min-width: 600px;
-  min-height: 400px;
+  min-width: min(300px, 90vw);
+  min-height: 200px;
   border-radius: var(--r-lg);
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 300px;
-  min-height: 200px;
   overflow: hidden;
-  position: relative
+  position: relative;
 }
 
 .lb-img img {
@@ -679,7 +679,7 @@ img {
 
 .invest-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .invest-item {
@@ -2570,16 +2570,16 @@ footer {
   }
 
   .invest-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .invest-item {
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, .07)
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
   }
 
   .invest-item:last-child {
-    border-bottom: none
+    border-bottom: none;
   }
 
   .overview-grid {
