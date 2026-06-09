@@ -1682,6 +1682,11 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
+  .type-body {
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+
   .type-detail-panel,
   .type-detail-panel.open {
     display: none !important;
@@ -2686,7 +2691,16 @@ footer {
   .type-detail-btn {
     display: flex;
   }
+
 }
+
+/* 타입 모달 열릴 때 플로팅바/미니배너 숨기기 */
+body.type-modal-open .floating-bar,
+body.type-modal-open #miniBanner {
+  display: none !important;
+  z-index: 799 !important;
+}
+
 
 /* ── 모바일 타입 바텀시트 모달 ── */
 .type-modal-overlay {
@@ -2712,15 +2726,15 @@ footer {
   border-radius: 16px 16px 0 0;
   z-index: 801;
   max-height: 88vh;
-  overflow-y: auto;
+  display: none;
+  flex-direction: column;
+  pointer-events: none;
   transform: translateY(100%);
   transition: transform .35s cubic-bezier(.4, 0, .2, 1);
-  display: none;
-  pointer-events: none;
 }
 
 .type-modal.open {
-  display: block;
+  display: flex;
   transform: translateY(0);
   pointer-events: auto;
 }
@@ -2830,6 +2844,9 @@ footer {
 
 .type-modal-info {
   padding: 8px 16px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }
 
 .type-modal-price-lbl {
@@ -2879,7 +2896,7 @@ footer {
   justify-content: center;
   gap: 6px;
   width: calc(100% - 28px);
-  margin: 8px 14px 100px;
+  margin: 8px 14px 20px;
   padding: 13px;
   background: var(--navy);
   color: #fff;
@@ -2889,6 +2906,7 @@ footer {
   font-weight: 700;
   cursor: pointer;
   font-family: 'Pretendard', sans-serif;
+  flex-shrink: 0;
 }
 
 .type-modal-cta:hover {
@@ -2901,6 +2919,7 @@ footer {
   .type-modal-overlay {
     display: none !important;
   }
+
 }
 
 /* ── 계약금 힌트 (가격카드 내) ── */
@@ -3038,7 +3057,7 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.55);
+  background: rgba(0, 0, 0, .55);
   z-index: 900;
   pointer-events: none;
 }

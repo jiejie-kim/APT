@@ -122,6 +122,7 @@ function openTypeLightbox(idx) {
 function closeLightbox() {
   document.getElementById("lightbox").classList.remove("open");
   document.body.style.overflow = "";
+  document.body.classList.remove("type-modal-open");
 }
 
 function moveLb(dir) {
@@ -628,12 +629,63 @@ function openTypeModal(d, imgs) {
 
   // 모달 열기
   overlay.classList.add("open");
-  modal.style.display = "block";
-  modal.classList.add("open");
+  modal.style.display = "flex";
+  requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add("open")));
   document.body.style.overflow = "hidden";
+  document.body.classList.add("type-modal-open");
 
   // 스크롤 맨 위로
   modal.scrollTop = 0;
+
+  // 드래그로 닫기 (핸들 + 헤더 영역)
+  initModalDrag(modal);
+}
+
+/* ── 바텀시트 드래그로 닫기 ── */
+function initModalDrag(modal) {
+  // 이미 등록된 리스너 중복 방지
+  if (modal._dragInit) return;
+  modal._dragInit = true;
+
+  const handle = modal.querySelector(".type-modal-handle");
+  const header = modal.querySelector(".type-modal-header");
+  const dragZone = [handle, header].filter(Boolean);
+
+  let startY = 0;
+  let currentY = 0;
+  let dragging = false;
+
+  function onTouchStart(e) {
+    startY = e.touches[0].clientY;
+    currentY = 0;
+    dragging = true;
+    modal.style.transition = "none";
+  }
+
+  function onTouchMove(e) {
+    if (!dragging) return;
+    const dy = e.touches[0].clientY - startY;
+    if (dy < 0) return; // 위로 드래그 무시
+    currentY = dy;
+    modal.style.transform = `translateY(${dy}px)`;
+  }
+
+  function onTouchEnd() {
+    if (!dragging) return;
+    dragging = false;
+    modal.style.transition = "";
+    if (currentY > 100) {
+      closeTypeModal();
+    } else {
+      modal.style.transform = "translateY(0)";
+    }
+  }
+
+  dragZone.forEach(el => {
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: true });
+    el.addEventListener("touchend", onTouchEnd);
+  });
 }
 
 function closeTypeModal() {
@@ -641,9 +693,13 @@ function closeTypeModal() {
   const modal = document.getElementById("typeModal");
   if (overlay) overlay.classList.remove("open");
   if (modal) {
+    modal.style.transform = "";
     modal.classList.remove("open");
-    modal.style.display = "none";
-    modal.style.pointerEvents = "none";
+    setTimeout(() => {
+      modal.style.display = "none";
+      modal.style.pointerEvents = "none";
+      modal._dragInit = false; // 다음 열기 때 재등록
+    }, 350);
   }
   document.body.style.overflow = "";
 }
