@@ -3028,12 +3028,14 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .55);
+  background: rgba(0,0,0,.55);
   z-index: 900;
+  pointer-events: none;
 }
 
 .contract-popup-overlay.open {
   display: block;
+  pointer-events: auto;
 }
 
 .contract-popup {
@@ -3051,11 +3053,13 @@ footer {
   box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
   transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), opacity .3s ease;
   opacity: 0;
+  pointer-events: none;
 }
 
 .contract-popup.open {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+  pointer-events: auto;
 }
 
 .contract-popup-close {
