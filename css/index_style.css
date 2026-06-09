@@ -286,7 +286,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(14, 30, 53, .55) 0%, transparent 60%);
+  /* background: linear-gradient(135deg, rgba(14, 30, 53, .55) 0%, transparent 60%); */
   pointer-events: none;
   border-radius: var(--r-xl)
 }
@@ -302,7 +302,7 @@ img {
 
 .h-img i {
   font-size: 36px;
-  color: rgba(255, 255, 255, .12)
+  /* color: rgba(255, 255, 255, .12) */
 }
 
 .h-img img {
@@ -1355,7 +1355,7 @@ footer {
     height: 220px;
   }
   .apt-body-inner {
-    padding: 16px 16px 16px;
+    padding: 5px 5px 5px;
   }
 
   .apt-body {

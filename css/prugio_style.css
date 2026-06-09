@@ -1979,7 +1979,7 @@ img {
   border-radius: var(--r-xl);
   overflow: hidden;
   background: #E2DDD5;
-  min-height: 420px;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2441,15 +2441,15 @@ footer {
 }
 
 /* PC ONLY */
-.pc-only {
+/* .pc-only {
   display: block
-}
+} */
 
 /* RESPONSIVE */
 @media(max-width:768px) {
-  .pc-only {
+  /* .pc-only {
     display: none !important
-  }
+  } */
 
   .contact-wrap {
     grid-template-columns: 1fr
