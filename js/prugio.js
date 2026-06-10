@@ -27,8 +27,8 @@ const lbImages = [
   { src: "images/prugio/prugio_community_5.webp", caption: "커뮤니티 5" },
   { src: "images/prugio/prugio_community_6.webp", caption: "커뮤니티 6" },
   // 입지환경 (20~21)
-  { src: "images/prugio/location_1.jpg", caption: "입지환경 1" },
-  { src: "images/prugio/location_2.jpg", caption: "입지환경 2" },
+  { src: "images/prugio/prugio_map_1.webp", caption: "입지환경 1" },
+  { src: "iimages/prugio/prugio_map_2.webp", caption: "입지환경 2" },
 ];
 
 let lbCurrent = 0;
