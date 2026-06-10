@@ -37,56 +37,39 @@ let lbMode = "gallery";
 /* ══ 타입별 이미지 ══ */
 const typeImages = {
   "80A": [
-    { src: "images/prugio/prugio_type_80a_1.png", caption: "80A 기본형" },
-    { src: "images/prugio/prugio_type_80a_1.png", caption: "80A 기본형", label: "기본형" },
-    { src: "images/prugio/prugio_type_80a_.webp", caption: "80A 확장기본형", label: "확장기본형" },
-    { src: "images/prugio/prugio_type_80a_3.png", caption: "80A 유상옵션", label: "유상옵션" },
-    { src: "images/prugio/prugio_type_80a_4.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
-    { src: "images/prugio/prugio_type_80a_5.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
-    { src: "images/prugio/prugio_type_80a_6.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
-    { src: "images/prugio/prugio_type_80a_7.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
+    { src: "images/prugio/80A.webp", caption: "80A 기본형" },
+    { src: "images/prugio/80A.webp", caption: "80A 기본형" },
+
   ],
   "84A": [
-    { src: "images/prugio/74a_plan.webp", caption: "84A 평면도" },
-    { src: "images/prugio/74a_living.webp", caption: "84A 거실" },
-    { src: "images/prugio/74a_kitchen.webp", caption: "84A 주방" },
-    { src: "images/prugio/74a_room.webp", caption: "84A 방" },
+    { src: "images/prugio/84A.webp", caption: "84A 평면도" },
+    { src: "images/prugio/84A.webp", caption: "84A 평면도" },
   ],
   "84B": [
-    { src: "images/prugio/74b_plan.webp", caption: "84B 평면도" },
-    { src: "images/prugio/74b_living.webp", caption: "84B 거실" },
-    { src: "images/prugio/74b_kitchen.webp", caption: "84B 주방" },
-    { src: "images/prugio/74b_room.webp", caption: "84B 방" },
+    { src: "images/prugio/84B.webp", caption: "84B 평면도" },
+    { src: "images/prugio/84B.webp", caption: "84B 평면도" },
+
   ],
   "84C": [
-    { src: "images/prugio/84a_plan.webp", caption: "84C 평면도" },
-    { src: "images/prugio/84a_living.webp", caption: "84C 거실" },
-    { src: "images/prugio/84a_kitchen.webp", caption: "84C 주방" },
-    { src: "images/prugio/84a_room.webp", caption: "84C 방" },
+    { src: "images/prugio/84C.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C.webp", caption: "84C 평면도" },
+
   ],
   "84D": [
-    { src: "images/prugio/84b_plan.webp", caption: "84D 평면도" },
-    { src: "images/prugio/84b_living.webp", caption: "84D 거실" },
-    { src: "images/prugio/84b_kitchen.webp", caption: "84D 주방" },
-    { src: "images/prugio/84b_room.webp", caption: "84D 방" },
+    { src: "images/prugio/84D.webp", caption: "84D 평면도" },
+    { src: "images/prugio/84D.webp", caption: "84D 평면도" },
   ],
   "84E": [
-    { src: "images/prugio/84b_plan.webp", caption: "84E 평면도" },
-    { src: "images/prugio/84b_living.webp", caption: "84E 거실" },
-    { src: "images/prugio/84b_kitchen.webp", caption: "84E 주방" },
-    { src: "images/prugio/84b_room.webp", caption: "84E 방" },
+    { src: "images/prugio/84E.webp", caption: "84E 평면도" },
+    { src: "images/prugio/84E.webp", caption: "84E 평면도" },
   ],
   "134A": [
-    { src: "images/prugio/84b_plan.webp", caption: "134A 평면도" },
-    { src: "images/prugio/84b_living.webp", caption: "134A 거실" },
-    { src: "images/prugio/84b_kitchen.webp", caption: "134A 주방" },
-    { src: "images/prugio/84b_room.webp", caption: "134A 방" },
+    { src: "images/prugio/134A.webp", caption: "134A 평면도" },
+    { src: "images/prugio/134A.webp", caption: "134A 평면도" },
   ],
   "134B": [
-    { src: "images/prugio/84b_plan.webp", caption: "134B 평면도" },
-    { src: "images/prugio/84b_living.webp", caption: "134B 거실" },
-    { src: "images/prugio/84b_kitchen.webp", caption: "134B 주방" },
-    { src: "images/prugio/84b_room.webp", caption: "134B 방" },
+    { src: "images/prugio/134B.webp", caption: "134B 평면도" },
+    { src: "images/prugio/134B.webp", caption: "134B 평면도" },
   ],
 };
 let currentTypeImgs = [];
@@ -616,7 +599,8 @@ function openTypeModal(d, imgs) {
   subEl.innerHTML = "";
   imgs.forEach((img, i) => {
     const div = document.createElement("div");
-    div.className = "tms" + (i === 0 ? " on" : "");
+    div.className = "tms" + (i === 1 ? " on" : "");
+    if (i === 0) return; // 메인이미지와 동일한 첫번째 썸네일 숨김
     div.innerHTML = img.src
       ? `<img src="${img.src}" alt="${img.caption}">`
       : `<i class="ti ti-layout-2"></i>`;

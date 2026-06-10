@@ -34,12 +34,12 @@ body {
   font-family: 'Pretendard', -apple-system, sans-serif;
   background: var(--bg);
   color: var(--ink);
-  -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
-html, body {
+html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -1561,10 +1561,8 @@ img {
 }
 
 .type-card,
-
-
 .type-card:hover {
-  border-color: var(--navy2);
+  border-color: var(gray);
   box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
   transform: translateY(-2px)
 }
