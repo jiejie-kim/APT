@@ -2809,7 +2809,7 @@ body.type-modal-open #miniBanner {
   margin: 0 14px;
   border-radius: var(--r-lg);
   overflow: hidden;
-  background: #EDEAE4;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
