@@ -39,33 +39,61 @@ const typeImages = {
   "80A": [
     { src: "images/prugio/80A.webp", caption: "80A 기본형" },
     { src: "images/prugio/80A.webp", caption: "80A 기본형" },
-
+    { src: "images/prugio/80A_1.webp", caption: "80A 기본형" },
+    { src: "images/prugio/80A_2.webp", caption: "80A 기본형" },
+    { src: "images/prugio/80A_3.webp", caption: "80A 기본형" },
   ],
   "84A": [
     { src: "images/prugio/84A.webp", caption: "84A 평면도" },
     { src: "images/prugio/84A.webp", caption: "84A 평면도" },
+    { src: "images/prugio/80A_1.webp", caption: "84A 기본형" },
+    { src: "images/prugio/80A_2.webp", caption: "84A 기본형" },
+    { src: "images/prugio/80A_3.webp", caption: "84A 기본형" },
+    { src: "images/prugio/84A_1.webp", caption: "84A 기본형" },
+    { src: "images/prugio/84A_2.webp", caption: "84A 기본형" },
+    { src: "images/prugio/84A_3.webp", caption: "84A 기본형" },
+    { src: "images/prugio/84A_4.webp", caption: "84A 기본형" },
   ],
   "84B": [
     { src: "images/prugio/84B.webp", caption: "84B 평면도" },
     { src: "images/prugio/84B.webp", caption: "84B 평면도" },
-
+    { src: "images/prugio/84B_1.webp", caption: "84B 평면도" },
+    { src: "images/prugio/84B_2.webp", caption: "84B 평면도" },
+    { src: "images/prugio/84B_3.webp", caption: "84B 평면도" },
   ],
   "84C": [
     { src: "images/prugio/84C.webp", caption: "84C 평면도" },
     { src: "images/prugio/84C.webp", caption: "84C 평면도" },
-
+    { src: "images/prugio/84C_1.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_2.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_3.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_4.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_5.webp", caption: "84C 평면도" },
   ],
   "84D": [
     { src: "images/prugio/84D.webp", caption: "84D 평면도" },
     { src: "images/prugio/84D.webp", caption: "84D 평면도" },
+    { src: "images/prugio/84C_1.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_2.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_3.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_4.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_5.webp", caption: "84C 평면도" },
   ],
   "84E": [
     { src: "images/prugio/84E.webp", caption: "84E 평면도" },
     { src: "images/prugio/84E.webp", caption: "84E 평면도" },
+    { src: "images/prugio/84C_1.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84E_1.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84E_2.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84C_4.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84E_3.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84E_4.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84E_5.webp", caption: "84C 평면도" },
   ],
   "134A": [
     { src: "images/prugio/134A.webp", caption: "134A 평면도" },
     { src: "images/prugio/134A.webp", caption: "134A 평면도" },
+    
   ],
   "134B": [
     { src: "images/prugio/134B.webp", caption: "134B 평면도" },

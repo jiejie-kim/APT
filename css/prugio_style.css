@@ -1573,6 +1573,7 @@ img {
 }
 
 .type-img {
+  width: 100%;
   height: 180px;
   background: #EDEAE4;
   display: flex;
