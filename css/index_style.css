@@ -35,7 +35,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -44,7 +44,7 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
