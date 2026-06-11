@@ -263,7 +263,7 @@ function initFadeIn() {
 
 async function logClick(type) {
   const now = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
-  const page = '상세페이지';
+  const page = '메인페이지';
   try {
     await fetch(SCRIPT_URL, {
       method: 'POST',

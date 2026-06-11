@@ -471,7 +471,7 @@ async function doSubmit() {
     await fetch(SCRIPT_URL, {
       method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: name.value.trim(), phone: phone.value.trim(), time: now, page: "상세페이지" })
+      body: JSON.stringify({ name: name.value.trim(), phone: phone.value.trim(), time: now, page: "푸르지오 분양상담" })
     });
   } catch (e) { }
   document.getElementById("formWrap").style.display = "none";
@@ -547,7 +547,7 @@ async function logClick(type) {
     await fetch(SCRIPT_URL, {
       method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: "(클릭)", phone: type, time: now, page: "상세페이지" })
+      body: JSON.stringify({ name: "(클릭)", phone: type, time: now, page: "푸르지오" })
     });
   } catch (e) { }
 }

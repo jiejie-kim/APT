@@ -1348,6 +1348,7 @@ footer {
   padding: 0 8px;
   min-width: 0;
   overflow: hidden;
+  pointer-events: auto;
 }
 
 .fl-btn:hover {
