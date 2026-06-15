@@ -3,40 +3,32 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5AD0t5ETqH3qM0P3f7
 /* ══ 갤러리 이미지 ══ */
 const lbImages = [
   // 갤러리 (0~4)
-  { src: "images/starhills/main.webp", caption: "용인 양지서희스타힐스" },
-  { src: "images/starhills/main_2.webp", caption: "용인 양지서희스타힐스" },
-  { src: "images/starhills/main_3.webp", caption: "용인 양지서희스타힐스" },
-  { src: "images/starhills/main_4.webp", caption: "용인 양지서희스타힐스" },
-  { src: "images/starhills/main_5.webp", caption: "용인 양지서희스타힐스" },
-  // 투자가치 (5~12)
-  { src: "images/starhills/invest_1.webp", caption: "투자가치 1" },
-  { src: "images/starhills/invest_2.webp", caption: "투자가치 2" },
-  { src: "images/starhills/invest_3.webp", caption: "투자가치 3" },
-  { src: "images/starhills/invest_4.webp", caption: "투자가치 4" },
-  { src: "images/starhills/invest_5.webp", caption: "투자가치 5" },
-  { src: "images/starhills/invest_6.webp", caption: "투자가치 6" },
-  { src: "images/starhills/invest_7.webp", caption: "투자가치 7" },
-  { src: "images/starhills/invest_8.webp", caption: "투자가치 8" },
-  // 단지안내 (13~18)
-  { src: "images/starhills/internal_1.webp", caption: "단지 안내 메인" },
-  { src: "images/starhills/internal_2.webp", caption: "단지 안내 1" },
-  { src: "images/starhills/internal_3.webp", caption: "단지 안내 2" },
-  { src: "images/starhills/internal_4.webp", caption: "단지 안내 3" },
-  { src: "images/starhills/internal_5.webp", caption: "단지 안내 4" },
-  { src: "images/starhills/internal_6.webp", caption: "단지 안내 5" },
-  // 커뮤니티 (19~22)
-  { src: "images/starhills/community_1.webp", caption: "커뮤니티 1" },
-  { src: "images/starhills/community_2.webp", caption: "커뮤니티 2" },
-  { src: "images/starhills/community_3.webp", caption: "커뮤니티 3" },
-  { src: "images/starhills/community_4.webp", caption: "커뮤니티 4" },
-  // 스마트생활 (23~26)
-  { src: "images/starhills/option_1.webp", caption: "커뮤니티 1" },
-  { src: "images/starhills/option_2.webp", caption: "커뮤니티 2" },
-  { src: "images/starhills/option_3.webp", caption: "커뮤니티 3" },
-  { src: "images/starhills/option_4.webp", caption: "커뮤니티 4" },
-  // 입지환경 (23~24)
-  { src: "images/prugio/prugio_map_1.webp", caption: "입지환경 1" },
-  { src: "iimages/prugio/prugio_map_2.webp", caption: "입지환경 2" },
+  { src: "images/prugio/prugio_view_1.webp", caption: "용인푸르지오 원클러스터" },
+  { src: "images/prugio/prugio_view_2.webp", caption: "용인푸르지오 원클러스터" },
+  { src: "images/prugio/prugio_view_3.webp", caption: "용인푸르지오 원클러스터" },
+  { src: "images/prugio/prugio_view_4.webp", caption: "용인푸르지오 원클러스터" },
+  { src: "images/prugio/prugio_view_6.webp", caption: "용인푸르지오 원클러스터" },
+  // 투자가치 (5~10)
+  { src: "images/prugio/prugio_invest-photos_1.webp", caption: "투자가치 1" },
+  { src: "images/prugio/prugio_invest-photos_2.webp", caption: "투자가치 2" },
+  { src: "images/prugio/prugio_invest-photos_3.webp", caption: "투자가치 3" },
+  { src: "images/prugio/prugio_invest-photos_4.webp", caption: "투자가치 4" },
+  { src: "images/prugio/prugio_invest-photos_5.webp", caption: "투자가치 5" },
+  { src: "images/prugio/prugio_invest-photos_6.webp", caption: "투자가치 6" },
+  // 단지안내 (11~13)
+  { src: "images/prugio/prugio_internal_1.webp", caption: "단지 안내 메인" },
+  { src: "images/prugio/prugio_internal_2.webp", caption: "단지 안내 1" },
+  { src: "images/prugio/prugio_internal_3.webp", caption: "단지 안내 2" },
+  // 커뮤니티 (14~19)
+  { src: "images/prugio/prugio_community_1.webp", caption: "커뮤니티 1" },
+  { src: "images/prugio/prugio_community_2.webp", caption: "커뮤니티 2" },
+  { src: "images/prugio/prugio_community_3.webp", caption: "커뮤니티 3" },
+  { src: "images/prugio/prugio_community_4.webp", caption: "커뮤니티 4" },
+  { src: "images/prugio/prugio_community_5.webp", caption: "커뮤니티 5" },
+  { src: "images/prugio/prugio_community_6.webp", caption: "커뮤니티 6" },
+  // 입지환경 (20~21)
+  { src: "images/prugio/location_1.jpg", caption: "입지환경 1" },
+  { src: "images/prugio/location_2.jpg", caption: "입지환경 2" },
 ];
 
 let lbCurrent = 0;
@@ -44,42 +36,59 @@ let lbMode = "gallery";
 
 /* ══ 타입별 이미지 ══ */
 const typeImages = {
-  "59A": [
-    { src: "images/starhills/type_59A_1.webp", caption: "80A 기본형" },
-    { src: "images/starhills/type_59A_1.webp", caption: "80A 기본형" },
-  ],
-  "59B": [
-    { src: "images/starhills/type_59B_1.webp", caption: "84A 평면도" },
-    { src: "images/starhills/type_59B_1.webp", caption: "84A 평면도" },
-  ],
-  "59C": [
-    { src: "images/starhills/type_59C_1.webp", caption: "84B 평면도" },
-    { src: "images/starhills/type_59C_1.webp", caption: "84B 평면도" },
-  ],
-  "69A": [
-    { src: "images/prugio/84C.webp", caption: "84C 평면도" },
-    { src: "images/prugio/84C.webp", caption: "84C 평면도" },
-  ],
-  "74A": [
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
-
-  ],
-  "74B": [
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
+  "80A": [
+    { src: "images/prugio/prugio_type_80a_1.png", caption: "80A 기본형" },
+    { src: "images/prugio/prugio_type_80a_1.png", caption: "80A 기본형", label: "기본형" },
+    { src: "images/prugio/prugio_type_80a_.webp", caption: "80A 확장기본형", label: "확장기본형" },
+    { src: "images/prugio/prugio_type_80a_3.png", caption: "80A 유상옵션", label: "유상옵션" },
+    { src: "images/prugio/prugio_type_80a_4.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
+    { src: "images/prugio/prugio_type_80a_5.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
+    { src: "images/prugio/prugio_type_80a_6.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
+    { src: "images/prugio/prugio_type_80a_7.png", caption: "80A 라이프업 수납", label: "라이프업수납" },
   ],
   "84A": [
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
-
+    { src: "images/prugio/74a_plan.webp", caption: "84A 평면도" },
+    { src: "images/prugio/74a_living.webp", caption: "84A 거실" },
+    { src: "images/prugio/74a_kitchen.webp", caption: "84A 주방" },
+    { src: "images/prugio/74a_room.webp", caption: "84A 방" },
   ],
   "84B": [
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
+    { src: "images/prugio/74b_plan.webp", caption: "84B 평면도" },
+    { src: "images/prugio/74b_living.webp", caption: "84B 거실" },
+    { src: "images/prugio/74b_kitchen.webp", caption: "84B 주방" },
+    { src: "images/prugio/74b_room.webp", caption: "84B 방" },
+  ],
+  "84C": [
+    { src: "images/prugio/84a_plan.webp", caption: "84C 평면도" },
+    { src: "images/prugio/84a_living.webp", caption: "84C 거실" },
+    { src: "images/prugio/84a_kitchen.webp", caption: "84C 주방" },
+    { src: "images/prugio/84a_room.webp", caption: "84C 방" },
+  ],
+  "84D": [
+    { src: "images/prugio/84b_plan.webp", caption: "84D 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "84D 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "84D 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "84D 방" },
+  ],
+  "84E": [
+    { src: "images/prugio/84b_plan.webp", caption: "84E 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "84E 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "84E 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "84E 방" },
+  ],
+  "134A": [
+    { src: "images/prugio/84b_plan.webp", caption: "134A 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "134A 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "134A 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "134A 방" },
+  ],
+  "134B": [
+    { src: "images/prugio/84b_plan.webp", caption: "134B 평면도" },
+    { src: "images/prugio/84b_living.webp", caption: "134B 거실" },
+    { src: "images/prugio/84b_kitchen.webp", caption: "134B 주방" },
+    { src: "images/prugio/84b_room.webp", caption: "134B 방" },
   ],
 };
-
 let currentTypeImgs = [];
 
 /* ── 라이트박스 ── */
@@ -130,14 +139,14 @@ document.addEventListener("keydown", (e) => {
 
 /* ══ 타입 데이터 ══ */
 const typeData = {
-  "59A": { name: "59㎡ A타입", area: "공급 105.97㎡ / 전용 80.26㎡", rooms: "방3 / 욕실2", units: "218세대", price: "4.8억 ~ 5.5억", badge: "인기 타입" },
-  "59B": { name: "59㎡ A타입", area: "공급 98.10㎡ / 전용 74.33㎡", rooms: "방3 / 욕실2", units: "192세대", price: "5.9억 ~ 6.8억" },
-  "59C": { name: "59㎡ C타입", area: "공급 97.42㎡ / 전용 74.12㎡", rooms: "방3 / 욕실2", units: "155세대", price: "5.9억 ~ 6.5억" },
-  "69A": { name: "69㎡ C타입", area: "공급 110.77㎡ / 전용 69.89㎡", rooms: "방4 / 욕실2", units: "148세대", price: "6.8억 ~ 9.2억", badge: "조망 우수" },
-  "74A": { name: "74㎡ A타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
-  "74B": { name: "74㎡ B타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
-  "84A": { name: "84㎡ A타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
-  "84B": { name: "84㎡ B타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "80A": { name: "80㎡ A타입", area: "공급 105.97㎡ / 전용 80.26㎡", rooms: "방3 / 욕실2", units: "218세대", price: "4.8억 ~ 5.5억", badge: "인기 타입" },
+  "84A": { name: "84㎡ A타입", area: "공급 98.10㎡ / 전용 74.33㎡", rooms: "방3 / 욕실2", units: "192세대", price: "5.9억 ~ 6.8억" },
+  "84B": { name: "84㎡ B타입", area: "공급 97.42㎡ / 전용 74.12㎡", rooms: "방3 / 욕실2", units: "155세대", price: "5.9억 ~ 6.5억" },
+  "84C": { name: "84㎡ C타입", area: "공급 110.77㎡ / 전용 84.89㎡", rooms: "방4 / 욕실2", units: "148세대", price: "6.8억 ~ 9.2억", badge: "조망 우수" },
+  "84D": { name: "84㎡ D타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "84E": { name: "84㎡ E타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "134A": { name: "134㎡ A타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
+  "134B": { name: "134㎡ B타입", area: "공급 110.22㎡ / 전용 84.45㎡", rooms: "방4 / 욕실2", units: "100세대", price: "6.8억 ~ 8.5억" },
 };
 
 /* ── 타입 카드 클릭 ── */
@@ -232,7 +241,7 @@ function pick(card, typeKey) {
 function switchType(size, btn) {
   document.querySelectorAll(".type-tab").forEach(t => t.classList.remove("on"));
   btn.classList.add("on");
-  ["59", "69", "74", "84"].forEach(s => {
+  ["80", "84", "134"].forEach(s => {
     const el = document.getElementById("t" + s);
     if (el) el.style.display = s === size ? "grid" : "none";
   });
@@ -268,7 +277,7 @@ function moveSubImg(dir) {
 /* ── 투자가치 슬라이더 ── */
 let investCurrent = 0;
 let investTimer = null;
-const investTotal = 8; // 슬라이드 총 개수
+const investTotal = 4; // 슬라이드 총 개수
 
 function initInvestSlider() {
   const dots = document.getElementById("investDots");
@@ -389,7 +398,7 @@ function initOptionSlider() {
 /* ── 커뮤니티 슬라이더 (자동재생) ── */
 let communityCurrent = 0;
 let communityTimer = null;
-const communityTotal = 4; // 이미지 개수
+const communityTotal = 6; // 이미지 개수
 
 function initCommunitySlider() {
   const slider = document.getElementById("communitySlider");
@@ -423,56 +432,6 @@ function moveCommunity(dir) {
   communityTimer = setInterval(() => moveCommunity(1), 4000);
 }
 
-/* ── 스마트생활 슬라이더 (PC: 3개, 모바일: 1개) ── */
-let sq3Current = 0;
-let sq3Timer = null;
-
-function isMobile() { return window.innerWidth <= 768; }
-
-function getSq3PerView() { return isMobile() ? 1 : 3; }
-
-function initSq3Slider() {
-  const slider = document.getElementById("sq3Slider");
-  if (!slider) return;
-  sq3Current = 0;
-  updateSq3(0);
-  sq3Timer = setInterval(() => moveSq3(1), 4000);
-  let startX = 0;
-  slider.addEventListener("touchstart", e => { startX = e.changedTouches[0].screenX; }, { passive: true });
-  slider.addEventListener("touchend", e => {
-    const diff = startX - e.changedTouches[0].screenX;
-    if (Math.abs(diff) > 50) moveSq3(diff > 0 ? 1 : -1);
-  }, { passive: true });
-  window.addEventListener("resize", () => { sq3Current = 0; updateSq3(0); });
-}
-
-function updateSq3(idx) {
-  const slider = document.getElementById("sq3Slider");
-  if (!slider) return;
-  const slides = slider.querySelectorAll(".sq3-slide");
-  const perView = getSq3PerView();
-  const total = slides.length;
-  const maxIdx = total - perView;
-  sq3Current = Math.max(0, Math.min(idx, maxIdx));
-  const slideW = 100 / perView;
-  slides.forEach(s => s.style.flex = `0 0 ${slideW}%`);
-  slider.style.transform = `translateX(-${sq3Current * slideW}%)`;
-  const counter = document.getElementById("sq3Counter");
-  if (counter) counter.textContent = (sq3Current + 1) + " / " + (maxIdx + 1);
-}
-
-function moveSq3(dir) {
-  const slider = document.getElementById("sq3Slider");
-  if (!slider) return;
-  const slides = slider.querySelectorAll(".sq3-slide");
-  const perView = getSq3PerView();
-  const maxIdx = slides.length - perView;
-  const next = sq3Current + dir;
-  updateSq3(next < 0 ? maxIdx : next > maxIdx ? 0 : next);
-  clearInterval(sq3Timer);
-  sq3Timer = setInterval(() => moveSq3(1), 4000);
-}
-
 /* ── 전화번호 포맷 ── */
 ["inp-phone", "v-phone"].forEach(id => {
   const el = document.getElementById(id);
@@ -501,7 +460,7 @@ async function doSubmit() {
     await fetch(SCRIPT_URL, {
       method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: name.value.trim(), phone: phone.value.trim(), time: now, page: "푸르지오 분양상담" })
+      body: JSON.stringify({ name: name.value.trim(), phone: phone.value.trim(), time: now, page: "상세페이지" })
     });
   } catch (e) { }
   document.getElementById("formWrap").style.display = "none";
@@ -577,7 +536,7 @@ async function logClick(type) {
     await fetch(SCRIPT_URL, {
       method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: "(클릭)", phone: type, time: now, page: "푸르지오" })
+      body: JSON.stringify({ name: "(클릭)", phone: type, time: now, page: "상세페이지" })
     });
   } catch (e) { }
 }
@@ -587,7 +546,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initInvestSlider();
   initOptionSlider();
   initCommunitySlider();
-  initSq3Slider();
   initModalDrag();
   window.scrollTo(0, 0);
 
@@ -658,8 +616,7 @@ function openTypeModal(d, imgs) {
   subEl.innerHTML = "";
   imgs.forEach((img, i) => {
     const div = document.createElement("div");
-    div.className = "tms" + (i === 1 ? " on" : "");
-    if (i === 0) return; // 메인이미지와 동일한 첫번째 썸네일 숨김
+    div.className = "tms" + (i === 0 ? " on" : "");
     div.innerHTML = img.src
       ? `<img src="${img.src}" alt="${img.caption}">`
       : `<i class="ti ti-layout-2"></i>`;
@@ -783,17 +740,17 @@ function openContractPopup() {
 
 function closeContractPopup() {
   const overlay = document.getElementById("contractPopupOverlay");
-  const popup = document.getElementById("contractPopup");
+  const popup   = document.getElementById("contractPopup");
   if (overlay) {
     overlay.classList.remove("open");
-    overlay.style.display = "none";
+    overlay.style.display    = "none";
     overlay.style.pointerEvents = "none";
   }
   if (popup) {
     popup.classList.remove("open");
     // 애니메이션 끝난 후 완전히 숨김
     setTimeout(() => {
-      popup.style.display = "none";
+      popup.style.display     = "none";
       popup.style.pointerEvents = "none";
     }, 320);
   }

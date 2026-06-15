@@ -34,12 +34,12 @@ body {
   font-family: 'Pretendard', -apple-system, sans-serif;
   background: var(--bg);
   color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  -webkit-font-smoothing: antialiased
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -1035,10 +1035,6 @@ img {
 .community-slider {
   display: flex;
   width: 100%;
-<<<<<<< HEAD
-  height: 100%;
-=======
->>>>>>> c35b55cf05236801e07c10956c69b27dc39ce50f
   transition: transform .5s cubic-bezier(.4, 0, .2, 1);
   will-change: transform;
 }
@@ -1050,19 +1046,11 @@ img {
 
 .community-slide img {
   width: 100%;
-<<<<<<< HEAD
-  /* height: 100%; */
-  object-fit: cover;
-  display: block;
-  cursor: zoom-in;
-  /* aspect-ratio: 16/8; */
-=======
   height: 100%;
   object-fit: cover;
   display: block;
   cursor: zoom-in;
   aspect-ratio: 16/8;
->>>>>>> c35b55cf05236801e07c10956c69b27dc39ce50f
 }
 
 .community-prev,
@@ -1573,8 +1561,10 @@ img {
 }
 
 .type-card,
+
+
 .type-card:hover {
-  border-color: var(gray);
+  border-color: var(--navy2);
   box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
   transform: translateY(-2px)
 }
@@ -1585,7 +1575,6 @@ img {
 }
 
 .type-img {
-  width: 100%;
   height: 180px;
   background: #EDEAE4;
   display: flex;
@@ -2822,7 +2811,7 @@ body.type-modal-open #miniBanner {
   margin: 0 14px;
   border-radius: var(--r-lg);
   overflow: hidden;
-  background: #ffffff;
+  background: #EDEAE4;
   display: flex;
   align-items: center;
   justify-content: center;
