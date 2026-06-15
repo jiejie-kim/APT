@@ -90,8 +90,8 @@
   margin-bottom: 10px;
   padding: 3px;
   border-radius: 14px;
-  background: linear-gradient(105deg, #7a5300, #c9a832, #f5e080, #ffce2b, #c9a832, #bd850d);
-  box-shadow: 0 6px 32px rgba(196, 160, 80, 0.18), 0 2px 8px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(105deg, #e0a800, #ffca0c, #ffd61e, #fff47d, #00a79b, #00887b);
+  box-shadow: 0 6px 32px rgba(103, 105, 42, 0.18), 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .eb {
@@ -109,11 +109,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 80px 80px 0 0;
-  border-color: #c4a050 transparent transparent transparent;
+  width: 88px;
+  height: 88px;
+  background: linear-gradient(135deg, #f5e080 0%, #d4a840 40%, #a07820 100%);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
   z-index: 3;
 }
 
@@ -313,16 +312,13 @@
 
 /* ── 모바일 반응형 ── */
 @media (max-width: 640px) {
-  body {
-    padding: 20px 16px;
-  }
-
   .eb_outer {
+    width: 80%;
     border-radius: 12px;
   }
 
   .eb {
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
     min-height: auto;
   }
 
@@ -332,25 +328,30 @@
 
   .eb_corner_txt {
     width: 44px;
-    height: 32px;
-    transform: rotate(-45deg) translate(-4px, 4px);
+    height: 60px;
+    transform: rotate(-45deg) translate(4px, 4px);
   }
 
   .eb_corner_txt span:nth-child(1) {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .eb_corner_txt span:nth-child(2) {
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .eb_main {
-    padding: 20px 20px 0 60px;
+    padding: 20px;
     gap: 6px;
   }
 
   .eb_title {
-    font-size: 18px;
+    font-size: 17px;
+  }
+
+  .eb_sub {
+    font-size: 11px;
+    line-height: 1.7;
   }
 
   .eb_chips {
@@ -364,6 +365,10 @@
     border-right: none !important;
   }
 
+  .eb_note {
+    font-size: 9px;
+  }
+
   .eb_div {
     display: none !important;
   }
@@ -371,17 +376,20 @@
   .eb_r {
     flex: none !important;
     width: 100% !important;
-    justify-content: flex-start;
-    margin-left: 25%;
+    justify-content: center;
+    padding: 16px 20px 20px;
+    margin-left: 0;
+    margin-top: 20px;
   }
 
   .eb_vs {
-    width: 180px;
-    height: 70px;
+    width: 220px;
+    height: 90px;
   }
 
   .eb_vc {
-    width: 160px !important;
-    height: 70px !important;
+    width: 190px !important;
+    height: 84px !important;
   }
+
 }

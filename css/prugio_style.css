@@ -1035,10 +1035,7 @@ img {
 .community-slider {
   display: flex;
   width: 100%;
-<<<<<<< HEAD
   height: 100%;
-=======
->>>>>>> c35b55cf05236801e07c10956c69b27dc39ce50f
   transition: transform .5s cubic-bezier(.4, 0, .2, 1);
   will-change: transform;
 }
@@ -1050,19 +1047,11 @@ img {
 
 .community-slide img {
   width: 100%;
-<<<<<<< HEAD
   /* height: 100%; */
   object-fit: cover;
   display: block;
   cursor: zoom-in;
   /* aspect-ratio: 16/8; */
-=======
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  cursor: zoom-in;
-  aspect-ratio: 16/8;
->>>>>>> c35b55cf05236801e07c10956c69b27dc39ce50f
 }
 
 .community-prev,

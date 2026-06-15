@@ -45,38 +45,38 @@ let lbMode = "gallery";
 /* ══ 타입별 이미지 ══ */
 const typeImages = {
   "59A": [
-    { src: "images/starhills/type_59A_1.webp", caption: "80A 기본형" },
-    { src: "images/starhills/type_59A_1.webp", caption: "80A 기본형" },
+    { src: "images/starhills/type_59A_1.webp", caption: "59A 기본형" },
+    { src: "images/starhills/type_59A_1.webp", caption: "59A 기본형" },
   ],
   "59B": [
-    { src: "images/starhills/type_59B_1.webp", caption: "84A 평면도" },
-    { src: "images/starhills/type_59B_1.webp", caption: "84A 평면도" },
+    { src: "images/starhills/type_59B_1.webp", caption: "59b 평면도" },
+    { src: "images/starhills/type_59B_1.webp", caption: "59b 평면도" },
   ],
   "59C": [
-    { src: "images/starhills/type_59C_1.webp", caption: "84B 평면도" },
-    { src: "images/starhills/type_59C_1.webp", caption: "84B 평면도" },
+    { src: "images/starhills/type_59C_1.webp", caption: "59c 평면도" },
+    { src: "images/starhills/type_59C_1.webp", caption: "59c 평면도" },
   ],
   "69A": [
-    { src: "images/prugio/84C.webp", caption: "84C 평면도" },
-    { src: "images/prugio/84C.webp", caption: "84C 평면도" },
+    { src: "images/starhills/type_69_1.webp", caption: "69 평면도" },
+    { src: "images/starhills/type_69_1.webp", caption: "69 평면도" },
   ],
   "74A": [
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
+    { src: "images/starhills/type_74A_1.webp", caption: "74A 평면도" },
+    { src: "images/starhills/type_74A_1.webp", caption: "74A 평면도" },
 
   ],
   "74B": [
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
+    { src: "images/starhills/type_74B_1.webp", caption: "74B 평면도" },
+    { src: "images/starhills/type_74B_1.webp", caption: "74B 평면도" },
   ],
   "84A": [
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
-    { src: "images/prugio/74A.webp", caption: "134A 평면도" },
+    { src: "images/starhills/type_84A_1.webp", caption: "84A 평면도" },
+    { src: "images/starhills/type_84A_1.webp", caption: "84A 평면도" },
 
   ],
   "84B": [
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
-    { src: "images/prugio/74B.webp", caption: "134B 평면도" },
+    { src: "images/starhills/type_84B_1.webp", caption: "84B 평면도" },
+    { src: "images/starhills/type_84B_1.webp", caption: "84B 평면도" },
   ],
 };
 
@@ -501,7 +501,7 @@ async function doSubmit() {
     await fetch(SCRIPT_URL, {
       method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: name.value.trim(), phone: phone.value.trim(), time: now, page: "푸르지오 분양상담" })
+      body: JSON.stringify({ name: name.value.trim(), phone: phone.value.trim(), time: now, page: "서희스타힐스 분양상담" })
     });
   } catch (e) { }
   document.getElementById("formWrap").style.display = "none";
@@ -518,7 +518,7 @@ async function visitSubmit() {
     await fetch(SCRIPT_URL, {
       method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, phone, time: now, page: "방문상담예약" })
+      body: JSON.stringify({ name, phone, time: now, page: "서희스타힐스 방문상담예약" })
     });
   } catch (e) { }
   alert("방문 상담 예약이 완료되었습니다!\n담당자가 곧 연락드리겠습니다.");
@@ -577,7 +577,7 @@ async function logClick(type) {
     await fetch(SCRIPT_URL, {
       method: "POST", mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: "(클릭)", phone: type, time: now, page: "푸르지오" })
+      body: JSON.stringify({ name: "(클릭)", phone: type, time: now, page: "서희스타힐스" })
     });
   } catch (e) { }
 }
