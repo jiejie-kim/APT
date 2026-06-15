@@ -10,8 +10,13 @@
         this.onload = null;
         this.rel = 'stylesheet';
       " href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+    as="style" onload="this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  </noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
-  <script src="js/index.js"></script>
+  <script src="js/index.js" defer></script>
 </head>
 
 <body>
@@ -37,19 +42,22 @@
               .scrollIntoView({ behavior: 'smooth' })
           ">상담 신청</a>
     </div>
-    <button class="nav-cta" onclick="
+    <!-- <button class="nav-cta" onclick="
           document
             .getElementById('contact-section')
             .scrollIntoView({ behavior: 'smooth' })
         ">
-      무료 상담
-    </button>
+      1522-5681
+    </button> -->
+    <a class="nav-cta" href="tel:1522-5681" onclick="logClick('전화 클릭 - 상단 네비')"><i class="ti ti-phone"></i>
+      1522-5681</a>
+
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div>
+      <div class="fade-in-hero">
         <div class="hero-kicker">
           <i class="ti ti-shield-check"></i><span>신뢰 분양 플랫폼</span>
         </div>
@@ -77,37 +85,37 @@
           </button>
         </div>
       </div>
-      <div class="hero-right">
+      <div class="hero-right fade-in-hero fade-in-hero--delay">
         <div class="hero-img-grid">
           <div class="h-img h-img-main">
-            <img src="images/prugio/prugio_view_1.webp" alt="단지 전경">
+            <img src="images/index/main_1.webp" alt="단지 전경">
             <i class="ti ti-building-skyscraper"></i>
             <div class="h-img-badge">
-              <i class="ti ti-map-pin"></i>용인 푸르지오 원클러스터파크
+              <i class="ti ti-map-pin"></i>용인 서희 스타힐스
             </div>
           </div>
           <div class="h-img h-img-tr">
-            <img src="images/prugio/prugio_view_2.webp" alt="로비">
+            <img src="images/index/main_3.webp" alt="로비">
             <i class="ti ti-sofa"></i>
           </div>
           <div class="h-img h-img-br">
-            <img src="images/prugio/prugio_view_3.webp" alt="조망">
+            <img src="images/index/main_2.webp" alt="조망">
             <i class="ti ti-mountain"></i>
           </div>
         </div>
         <div class="hero-stats-card">
           <div class="hero-stat-grid">
             <div class="h-stat">
-              <div class="h-stat-num">2,433<em>세대</em></div>
-              <div class="h-stat-lbl">총 분양 세대수</div>
+              <div class="h-stat-num">100<em>%</em></div>
+              <div class="h-stat-lbl">HUG안심보증단지</div>
             </div>
             <div class="h-stat">
               <div class="h-stat-num">3<em>개</em></div>
-              <div class="h-stat-lbl">프리미엄 단지</div>
+              <div class="h-stat-lbl">반도체클러스터 수혜</div>
             </div>
             <div class="h-stat">
-              <div class="h-stat-num">127<em>%</em></div>
-              <div class="h-stat-lbl">5년 시세 상승률 (수지구)</div>
+              <div class="h-stat-num">22<em>%</em></div>
+              <div class="h-stat-lbl">5년 시세 상승률 (용인시)</div>
             </div>
             <div class="h-stat">
               <div class="h-stat-num">98<em>%</em></div>
@@ -116,8 +124,8 @@
           </div>
           <div class="hero-trust">
             <i class="ti ti-shield-check"></i>
-            <span><strong>대한주택보증 가입 완료</strong> · 공인중개사 협력망 운영
-              · 중도금 100% 무이자</span>
+            <span><strong>HUG 주택도시보증공사 가입</strong> · 공인중개사 협력망 운영
+              · 중도금 대출가능</span>
           </div>
         </div>
       </div>
@@ -125,7 +133,7 @@
   </section>
 
   <!-- TRUST STRIP -->
-  <div class="trust-strip">
+  <div class="trust-strip fade-in">
     <div class="trust-inner">
       <div class="trust-item">
         <i class="ti ti-award"></i><span>분양 신뢰 브랜드</span>
@@ -140,7 +148,7 @@
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
-        <i class="ti ti-star"></i><span>고객 만족도 98.2%</span>
+        <i class="ti ti-star"></i><span>고객 만족도 94.2%</span>
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
@@ -150,34 +158,32 @@
   </div>
 
   <!-- APPEAL -->
-  <section class="appeal">
+  <section class="appeal" id="appealSection">
     <div class="appeal-inner">
-      <div class="appeal-item">
-        <div class="appeal-icon"><i class="ti ti-train"></i></div>
+      <div class="appeal-item appeal-ani">
+        <div class="appeal-icon"><i class="ti ti-cpu"></i></div>
         <div class="appeal-num">01</div>
-        <div class="appeal-title">GTX·신분당선<br />더블 교통 호재</div>
+        <div class="appeal-title">삼성·SK 반도체 밸리<br />최대 첨단 산업 수혜</div>
         <div class="appeal-desc">
-          GTX-A 개통으로 강남까지 20분대. 신분당선 더블 역세권 수지구는 수도권
-          교통 허브로 자리잡고 있습니다. 교통 호재는 곧 시세 상승의 핵심
-          동력입니다.
+          대기업이 선택한 처인구의 중심, 삼성과 SK하이닉스가 주도하는 반도체 메가 클러스터의 핵심 수혜 단지. 든든한 배후 수요와 지가 상승을 견인할 확실한 미래 투자입니다.
         </div>
       </div>
-      <div class="appeal-item">
+      <div class="appeal-item appeal-ani">
         <div class="appeal-icon"><i class="ti ti-school"></i></div>
         <div class="appeal-num">02</div>
         <div class="appeal-title">학군+자연환경<br />프리미엄 생활</div>
         <div class="appeal-desc">
-          수지 명문 학군과 광교호수공원이 공존하는 유일한 입지. 교육·자연·편의
-          3박자를 갖춘 단지는 실수요와 투자 수요 모두를 끌어당깁니다.
+          도보 통학이 가능한 안심 학군과 쾌적한 숲세권이 공존하는 입지.
+          교육·자연·편의 3박자를 갖춘 단지는 실수요와 투자 수요 모두를 끌어당깁니다.
         </div>
       </div>
-      <div class="appeal-item">
+      <div class="appeal-item appeal-ani">
         <div class="appeal-icon"><i class="ti ti-trending-up"></i></div>
         <div class="appeal-num">03</div>
         <div class="appeal-title">지금이 적기<br />분양가 상승 전</div>
         <div class="appeal-desc">
-          공사비·분양가 상승 추세가 이어지고 있습니다. 현재 분양가는 향후
-          2~3년 내 주변 시세 대비 현저히 저렴해질 것으로 전망됩니다.
+          처인구 중심축 개발에 따른 지가·분양가·공사비 모두 상승 추세가 이어지고 있습니다.
+          현재 분양가는 향후 2~3년 내 주변 시세 대비 현저히 저렴해질 것으로 전망됩니다.
         </div>
       </div>
     </div>
@@ -200,11 +206,12 @@
         <div class="list-count" id="aptCount">4개 단지</div>
       </div>
       <div id="aptList">
+
         <!-- 단지 1 -->
-        <div class="apt-row" data-status="open" onclick="location.href ='prugio.html'">
+        <div class="apt-row" data-status="open" onclick="location.href = 'starhills.html'">
           <div class="apt-thumb">
             <div class="apt-thumb-inner">
-              <img src="images/prugio/prugio_view_1.webp" alt="단지 전경">
+              <img src="images/starhills/main.webp" alt="단지 전경">
               <!-- <i class="ti ti-building-skyscraper"></i> -->
             </div>
             <span class="thumb-badge badge-open">분양중</span>
@@ -212,7 +219,67 @@
           <div class="apt-body">
             <div class="apt-body-inner">
               <div>
-                <div class="apt-name">용인푸르지오 원클러스터파크</div>
+                <div class="apt-name">서희 스타힐스</div>
+                <div class="apt-loc">
+                  <i class="ti ti-map-pin"></i>경기도 용인시 기흥구 영덕동
+                </div>
+                <div class="apt-specs">
+                  <div>
+                    <div class="spec-lbl">세대수</div>
+                    <div class="spec-val">1,265세대</div>
+                  </div>
+                  <div>
+                    <div class="spec-lbl">면적</div>
+                    <div class="spec-val">59㎡/69㎡/74㎡/84㎡</div>
+                  </div>
+                  <div>
+                    <div class="spec-lbl">입주</div>
+                    <div class="spec-val">2030년 8월</div>
+                  </div>
+                  <div>
+                    <div class="spec-lbl">건설사</div>
+                    <div class="spec-val">서희건설</div>
+                  </div>
+                </div>
+                <div class="tag-row">
+                  <span class="tag">계약금 분양가5%</span>
+                  <span class="tag">중도금 대출가능</span>
+                </div>
+              </div>
+              <div class="invest-row">
+                <span class="invest-tag">📈 대기업 반도체</span>
+                <span class="invest-tag">🌳 수변 공원 조성</span>
+                <span class="invest-tag">🏗️ 브랜드 시공</span>
+              </div>
+            </div>
+          </div>
+          <div class="apt-right">
+            <div>
+              <div class="price-lbl">74㎡ 기준</div>
+              <div class="price-main">5.7억~</div>
+              <div class="price-range">최고 7.4억</div>
+            </div>
+            <div class="right-bottom">
+              <span class="dday dday-red">분양중</span>
+              <a href="detail.html" class="detail-link" onclick="event.stopPropagation()">상세보기 <i
+                  class="ti ti-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 단지 2 -->
+        <div class="apt-row" data-status="open" onclick="location.href ='prugio.html'">
+          <div class="apt-thumb">
+            <div class="apt-thumb-inner">
+              <img src="images/prugio/prugio_main_banner.webp" alt="단지 전경">
+              <!-- <i class="ti ti-building-skyscraper"></i> -->
+            </div>
+            <span class="thumb-badge badge-open">분양중</span>
+          </div>
+          <div class="apt-body">
+            <div class="apt-body-inner">
+              <div>
+                <div class="apt-name">푸르지오 원클러스터파크</div>
                 <div class="apt-loc">
                   <i class="ti ti-map-pin"></i>경기도 용인시 처인구 양지면
                 </div>
@@ -223,109 +290,51 @@
                   </div>
                   <div>
                     <div class="spec-lbl">면적</div>
-                    <div class="spec-val">80㎡ / 84㎡ / 134㎡</div>
+                    <div class="spec-val">80㎡/84㎡/134㎡</div>
                   </div>
                   <div>
                     <div class="spec-lbl">입주</div>
-                    <div class="spec-val">2028년 02월</div>
+                    <div class="spec-val">2028년 12월</div>
                   </div>
                   <div>
                     <div class="spec-lbl">건설사</div>
-                    <div class="spec-val">OO건설</div>
+                    <div class="spec-val">대우건설</div>
                   </div>
                 </div>
                 <div class="tag-row">
-                  <span class="tag">SK하이닉스 반도체클러스터</span>
-                  <span class="tag">삼성전자 반도체클러스터</span>
-                  <span class="tag">대형공원 공세권 프리미엄</span>
+                  <span class="tag">계약금 분양가5%</span>
+                  <span class="tag">중도금대출 가능</span>
                 </div>
               </div>
               <div class="invest-row">
-                <span class="invest-tag">📈 GTX-A 수혜</span>
+                <span class="invest-tag">📈 대기업 반도체</span>
                 <span class="invest-tag">🏫 초·중교 도보권</span>
-                <span class="invest-tag">💰 분양가상한제 미적용</span>
+                <span class="invest-tag">🏡 대형공원 프리미엄</span>
               </div>
             </div>
           </div>
           <div class="apt-right">
             <div>
               <div class="price-lbl">84㎡ 기준</div>
-              <div class="price-main">6.8억~</div>
-              <div class="price-range">최고 9.2억</div>
+              <div class="price-main">4.9억~</div>
+              <div class="price-range">최고 5.4억</div>
             </div>
             <div class="right-bottom">
-              <span class="dday dday-red">D-12</span>
+              <span class="dday dday-red">마감임박</span>
               <a href="prugio.html" class="detail-link" onclick="event.stopPropagation()">상세보기 <i
                   class="ti ti-arrow-right"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- 단지 2 -->
-        <div class="apt-row" data-status="open" onclick="location.href = 'detail.html'">
-          <div class="apt-thumb">
-            <div class="apt-thumb-inner">
-              <i class="ti ti-building-skyscraper"></i>
-            </div>
-            <span class="thumb-badge badge-open">분양중</span>
-          </div>
-          <div class="apt-body">
-            <div class="apt-body-inner">
-              <div>
-                <div class="apt-name">기흥 더포레</div>
-                <div class="apt-loc">
-                  <i class="ti ti-map-pin"></i>경기도 용인시 기흥구 영덕동
-                </div>
-                <div class="apt-specs">
-                  <div>
-                    <div class="spec-lbl">세대수</div>
-                    <div class="spec-val">1,024세대</div>
-                  </div>
-                  <div>
-                    <div class="spec-lbl">면적</div>
-                    <div class="spec-val">59 / 74㎡</div>
-                  </div>
-                  <div>
-                    <div class="spec-lbl">입주</div>
-                    <div class="spec-val">2027년 3월</div>
-                  </div>
-                  <div>
-                    <div class="spec-lbl">건설사</div>
-                    <div class="spec-val">△△건설</div>
-                  </div>
-                </div>
-                <div class="tag-row">
-                  <span class="tag">경전철 인접</span>
-                  <span class="tag">대형 공원</span>
-                  <span class="tag">GTX 예정</span>
-                </div>
-              </div>
-              <div class="invest-row">
-                <span class="invest-tag">📈 1,000세대+ 대단지</span>
-                <span class="invest-tag">🌳 수변 공원 조성</span>
-                <span class="invest-tag">🏗️ 브랜드 시공</span>
-              </div>
-            </div>
-          </div>
-          <div class="apt-right">
-            <div>
-              <div class="price-lbl">74㎡ 기준</div>
-              <div class="price-main">5.4억~</div>
-              <div class="price-range">최고 6.8억</div>
-            </div>
-            <div class="right-bottom">
-              <span class="dday dday-red">D-28</span>
-              <a href="detail.html" class="detail-link" onclick="event.stopPropagation()">상세보기 <i
-                  class="ti ti-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+
 
         <!-- 단지 4: 분양완료 -->
-        <div class="apt-row" data-status="done" onclick="location.href = 'detail.html'">
+        <div class="apt-row" data-status="done">
           <div class="apt-thumb" style="opacity: 0.75">
             <div class="apt-thumb-inner">
-              <i class="ti ti-building-skyscraper"></i>
+              <img src="images/honorsville/main.webp" alt="단지 전경">
+              <!-- <i class="ti ti-building-skyscraper"></i> -->
             </div>
             <span class="thumb-badge badge-done">분양완료</span>
           </div>
@@ -333,51 +342,50 @@
             <div class="apt-body-inner">
               <div>
                 <div class="apt-name" style="color: var(--ink3)">
-                  수지 더클래스
+                  경남 아너스빌
                 </div>
                 <div class="apt-loc">
-                  <i class="ti ti-map-pin"></i>경기도 용인시 수지구 풍덕천동
+                  <i class="ti ti-map-pin"></i>경기도 용인시 처인구 양지면
                 </div>
                 <div class="apt-specs">
                   <div>
                     <div class="spec-lbl">세대수</div>
-                    <div class="spec-val">612세대</div>
+                    <div class="spec-val">997세대</div>
                   </div>
                   <div>
                     <div class="spec-lbl">면적</div>
-                    <div class="spec-val">59 / 74㎡</div>
+                    <div class="spec-val">84㎡/123㎡</div>
                   </div>
                   <div>
                     <div class="spec-lbl">입주</div>
-                    <div class="spec-val">2024년 6월</div>
+                    <div class="spec-val">2028년 12월</div>
                   </div>
                   <div>
                     <div class="spec-lbl">건설사</div>
-                    <div class="spec-val">OO건설</div>
+                    <div class="spec-val">SM삼환기업/동아건설산업</div>
                   </div>
                 </div>
                 <div class="tag-row">
-                  <span class="tag">SK하이닉스 반도체클러스</span>
-                  <span class="tag">수지 학군</span>
-                  <span class="tag">수변 조망</span>
+                  <span class="tag">✅ 100%분양완료</span>
                 </div>
               </div>
               <div class="invest-row">
-                <span class="invest-tag" style="opacity: 0.7">✅ 100% 계약 완료</span>
-                <span class="invest-tag" style="opacity: 0.7">📈 프리미엄 +4,200만원</span>
+                <span class="invest-tag">📈 대기업 반도체</span>
+                <span class="invest-tag">🏫 초·중교 도보권</span>
+                <span class="invest-tag">🏡 중대형 아파트</span>
               </div>
             </div>
           </div>
           <div class="apt-right">
             <div>
               <div class="price-lbl">최종 분양가</div>
-              <div class="price-main" style="color: var(--ink3)">5.2억~</div>
-              <div class="price-range">최고 6.9억</div>
+              <div class="price-main" style="color: var(--ink3)">4.7억~</div>
+              <div class="price-range">최고 7.2억</div>
             </div>
             <div class="right-bottom">
-              <span class="dday dday-gray">완료</span>
-              <a href="detail.html" class="detail-link" onclick="event.stopPropagation()" style="opacity: 0.6">상세보기 <i
-                  class="ti ti-arrow-right"></i></a>
+              <span class="dday dday-gray">분양완료</span>
+              <!-- <a href="detail.html" class="detail-link" onclick="event.stopPropagation()" style="opacity: 0.6">상세보기 <i
+                  class="ti ti-arrow-right"></i></a> -->
             </div>
           </div>
         </div>
@@ -403,7 +411,7 @@
   <!-- /.list-section -->
 
   <!-- SOCIAL PROOF SLIDER -->
-  <section class="proof" id="company-section">
+  <section class="proof fade-in" id="company-section">
     <div class="proof-inner">
       <div class="proof-head">
         <div class="proof-kicker">고객 후기</div>
@@ -415,80 +423,88 @@
             <div class="proof-card">
               <div class="proof-quote">"</div>
               <div class="proof-text">
-                처음 분양을 고민할 때 막막했는데, 담당자분이 청약 자격부터
+                처음 분양을 고민할 때 막막했는데, 담당자분이 분양 자격부터
                 대출까지 하나하나 안내해 주셔서 믿고 계약할 수 있었습니다.
                 지금은 시세도 많이 올라 뿌듯합니다.
               </div>
               <div class="proof-author">
                 <div class="proof-dot"></div>
-                30대 직장인 · 수지 파크에디션 84㎡ 계약
+                30대 직장인 · 양지 푸르지오원클러스터 84㎡ 계약
               </div>
             </div>
             <div class="proof-card">
               <div class="proof-quote">"</div>
               <div class="proof-text">
-                GTX 개통 호재를 미리 알고 계약했는데 역시 탁월한 선택이었어요.
-                같은 단지 분양권 프리미엄이 벌써 3,000만원 이상 올랐다고
-                하네요.
+                호재를 미리 알고 계약했지만, 역시 탁월한 선택이었어요.
+                같은 단지 분양권 프리미엄이 벌써 기대 이상으로 올랐다고 하네요.
               </div>
               <div class="proof-author">
                 <div class="proof-dot"></div>
-                40대 자영업자 · 기흥 더포레 74㎡ 계약
+                40대 자영업자 ·양지 경남아너스빌 84㎡ 계약
               </div>
             </div>
             <div class="proof-card">
               <div class="proof-quote">"</div>
               <div class="proof-text">
-                어린 자녀 학교 때문에 학군을 최우선으로 봤어요. 수지 학군
-                설명이 너무 상세해서 확신이 생겼고, 가족 모두 만족하고
+                어린 자녀 학교 때문에 학군을 최우선으로 봤어요. 학군
+                설명도 잘해주시고 걱적없이 가족 모두 만족하고
                 있습니다.
               </div>
               <div class="proof-author">
                 <div class="proof-dot"></div>
-                30대 맞벌이 부부 · 수지 파크에디션 59㎡ 계약
+                30대 맞벌이 부부 · 양지 푸르지오원클러스터 84㎡ 계약
               </div>
             </div>
             <div class="proof-card">
               <div class="proof-quote">"</div>
               <div class="proof-text">
                 투자 목적으로 알아보다가 전문 상담을 받고 실거주까지
-                결정했어요. 입지 분석이 정말 꼼꼼해서 신뢰가 갔습니다. 강력
+                결정했어요. 분석이 정말 꼼꼼해서 신뢰가 갔습니다. 강력
                 추천합니다!
               </div>
               <div class="proof-author">
                 <div class="proof-dot"></div>
-                50대 사업가 · 기흥 더포레 84㎡ 계약
+                50대 사업가 · 양지 서희스타힐스 84㎡ 계약
               </div>
             </div>
             <div class="proof-card">
               <div class="proof-quote">"</div>
               <div class="proof-text">
-                청약 자격이 안 된다고 포기했는데 담당자가 특별공급 방법을
-                알려줘서 당첨됐어요. 없었으면 놓쳤을 기회였습니다. 정말
+                자격이 안 된다고 포기했는데 담당자가 방법을
+                알려줘서 가능했어요. 없었으면 놓쳤을 기회였습니다. 정말
                 감사합니다.
               </div>
               <div class="proof-author">
                 <div class="proof-dot"></div>
-                30대 신혼부부 · 처인 센트럴파크 59㎡ 계약
+                30대 신혼부부 · 양지 경남아너스빌 84㎡ 계약
+              </div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-quote">"</div>
+              <div class="proof-text">
+                은퇴 후 거주하면서 안정적인 자산 가치도 누릴 수 있는 곳을 찾고 있었습니다. 나중에 임대를 놓거나 처분하기에도 걱정 없을 것 같아 결심했습니다.
+              </div>
+              <div class="proof-author">
+                <div class="proof-dot"></div>
+                60대 자영업자 · 양지 경남아너스빌 84㎡ 계약
               </div>
             </div>
           </div>
-        </div>
-        <div class="proof-nav">
-          <button class="proof-arrow" id="prevBtn">
-            <i class="ti ti-arrow-left"></i>
-          </button>
-          <div class="proof-dots" id="proofDots"></div>
-          <button class="proof-arrow" id="nextBtn">
-            <i class="ti ti-arrow-right"></i>
-          </button>
+          <div class="proof-nav">
+            <button class="proof-arrow" id="prevBtn">
+              <i class="ti ti-arrow-left"></i>
+            </button>
+            <div class="proof-dots" id="proofDots"></div>
+            <button class="proof-arrow" id="nextBtn">
+              <i class="ti ti-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- CTA BAND -->
-  <section class="cta-band" id="contact-section">
+  <section class="cta-band fade-in" id="contact-section">
     <div class="cta-band-inner">
       <div class="cta-band-text">
         <h2>지금 바로 전문가와 상담하세요</h2>
@@ -502,13 +518,14 @@
             ">
           <i class="ti ti-message"></i> 온라인 상담 신청
         </button>
-        <a class="btn-ghost" href="tel:1522-5681" onclick="logClick('전화 클릭 - CTA')"><i class="ti ti-phone"></i> 1522-5681</a>
+        <a class="btn-ghost" href="tel:1522-5681" onclick="logClick('분양자격 - CTA')"><i class="ti ti-phone"></i>
+          1522-5681</a>
       </div>
     </div>
   </section>
 
   <!-- 모델하우스 / 방문상담 -->
-  <section class="visit-cta" id="visit-section">
+  <section class="visit-cta fade-in" id="visit-section">
     <div class="visit-inner">
       <div class="visit-card">
         <div class="visit-icon"><i class="ti ti-home"></i></div>
@@ -520,7 +537,7 @@
             10:00–18:00 / 주말 10:00–18:00 (연중무휴)
           </div>
         </div>
-        <a href="tel:1522-5681" class="visit-btn visit-btn-primary"><i class="ti ti-phone"></i> 방문 예약하기</a>
+        <a class="visit-btn visit-btn-primary" href="tel:1522-5681" onclick="logClick('방문예약 - CTA')" ><i class="ti ti-phone"></i> 방문 예약하기</a>
       </div>
       <div class="visit-card">
         <div class="visit-icon"><i class="ti ti-calendar"></i></div>
@@ -578,9 +595,9 @@
   </footer>
 
   <!-- FLOATING BAR -->
-  <div class="floating-bar">
-    <!-- <a class="fl-btn fl-kakao" href="https://pf.kakao.com/_XXXXXX" target="_blank" rel="noopener" onclick="logClick('카카오톡 클릭')"><i class="ti ti-message-circle"></i>카카오톡</a> -->
-    <a class="fl-btn" href="sms:010-2618-5929?body=안녕하세요, 분양 상담 요청드립니다." onclick="logClick('문자 클릭')"><i class="ti ti-message"></i>문자</a>
+  <div class="floating-bar" style="min-width:180px">
+    <a class="fl-btn" href="sms:010-2618-5929?body=안녕하세요, 분양 상담 요청드립니다." onclick="logClick('문자 클릭')"><i
+        class="ti ti-message"></i>문자</a>
     <a class="fl-btn" href="tel:1522-5681" onclick="logClick('전화 클릭')"><i class="ti ti-phone"></i>전화</a>
   </div>
 
