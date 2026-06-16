@@ -24,17 +24,18 @@ const lbImages = [
   { src: "images/starhills/internal_4.webp", caption: "단지 안내 3" },
   { src: "images/starhills/internal_5.webp", caption: "단지 안내 4" },
   { src: "images/starhills/internal_6.webp", caption: "단지 안내 5" },
-  // 커뮤니티 (19~22)
-  { src: "images/starhills/community_1.webp", caption: "커뮤니티 1" },
+  // 커뮤니티 (19~23)
+  { src: "images/starhills/community_5.webp", caption: "커뮤니티 1" },
   { src: "images/starhills/community_2.webp", caption: "커뮤니티 2" },
   { src: "images/starhills/community_3.webp", caption: "커뮤니티 3" },
   { src: "images/starhills/community_4.webp", caption: "커뮤니티 4" },
-  // 스마트생활 (23~26)
+  { src: "images/starhills/community_1.webp", caption: "커뮤니티 5" },
+  // 스마트생활 (24~27)
   { src: "images/starhills/option_1.webp", caption: "커뮤니티 1" },
   { src: "images/starhills/option_2.webp", caption: "커뮤니티 2" },
   { src: "images/starhills/option_3.webp", caption: "커뮤니티 3" },
   { src: "images/starhills/option_4.webp", caption: "커뮤니티 4" },
-  // 입지환경 (23~24)
+  // 입지환경 (28~29)
   { src: "images/prugio/prugio_map_1.webp", caption: "입지환경 1" },
   { src: "iimages/prugio/prugio_map_2.webp", caption: "입지환경 2" },
 ];
@@ -389,7 +390,7 @@ function initOptionSlider() {
 /* ── 커뮤니티 슬라이더 (자동재생) ── */
 let communityCurrent = 0;
 let communityTimer = null;
-const communityTotal = 4; // 이미지 개수
+const communityTotal = 5; // 이미지 개수
 
 function initCommunitySlider() {
   const slider = document.getElementById("communitySlider");
