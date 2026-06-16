@@ -2,7 +2,7 @@
 .starhills .complex-photos {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .starhills .complex-main img {
@@ -15,13 +15,13 @@
 .starhills .complex-sub-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 8px;
 }
 
 .starhills .complex-sub-row2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .starhills .complex-sub img {
@@ -46,6 +46,12 @@
   .starhills .complex-main img,
   .starhills .complex-sub img {
     border-radius: 0 !important;
+  }
+
+  .starhills .complex-sub-row2,
+  .complex-sub img {
+    height: 100% !important;
+    gap: 4px;
   }
 
 }
