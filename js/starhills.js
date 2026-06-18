@@ -48,6 +48,14 @@ const typeImages = {
   "59A": [
     { src: "images/starhills/type_59A_1.webp", caption: "59A 기본형" },
     { src: "images/starhills/type_59A_1.webp", caption: "59A 기본형" },
+    { src: "images/starhills/type_59_1.webp", caption: "59A" },
+    { src: "images/starhills/type_59_2.webp", caption: "59A" },
+    { src: "images/starhills/type_59_3.webp", caption: "59A" },
+    { src: "images/starhills/type_59_4.webp", caption: "59A" },
+    { src: "images/starhills/type_59_5.webp", caption: "59A" },
+    { src: "images/starhills/type_59_6.webp", caption: "59A" },
+    { src: "images/starhills/type_59_7.webp", caption: "59A" },
+    { src: "images/starhills/type_59_8.webp", caption: "59A" },
   ],
   "59B": [
     { src: "images/starhills/type_59B_1.webp", caption: "59b 평면도" },
@@ -73,7 +81,15 @@ const typeImages = {
   "84A": [
     { src: "images/starhills/type_84A_1.webp", caption: "84A 평면도" },
     { src: "images/starhills/type_84A_1.webp", caption: "84A 평면도" },
-
+    { src: "images/starhills/type_84_1.webp", caption: "84A" },
+    { src: "images/starhills/type_84_2.webp", caption: "84A" },
+    { src: "images/starhills/type_84_3.webp", caption: "84A" },
+    { src: "images/starhills/type_84_4.webp", caption: "84A" },
+    { src: "images/starhills/type_84_5.webp", caption: "84A" },
+    { src: "images/starhills/type_84_6.webp", caption: "84A" },
+    { src: "images/starhills/type_84_7.webp", caption: "84A" },
+    { src: "images/starhills/type_84_8.webp", caption: "84A" },
+    { src: "images/starhills/type_84_9.webp", caption: "84A" },
   ],
   "84B": [
     { src: "images/starhills/type_84B_1.webp", caption: "84B 평면도" },

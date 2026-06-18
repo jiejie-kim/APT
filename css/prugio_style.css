@@ -755,6 +755,7 @@ img {
     grid-template-columns: 1fr;
     /* padding: 0 20px 20px; */
   }
+
 }
 
 /* 투자가치 슬라이더 */
@@ -1126,7 +1127,7 @@ img {
 
 .feature-card {
   background: var(--surface);
-  border: 1px solid var(--line);
+  /* border: 1px solid var(--line); */
   border-radius: var(--r-lg);
   padding: 20px;
   display: flex;
@@ -1548,12 +1549,12 @@ img {
 .type-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 18px;
   z-index: auto;
 }
 
 .type-card {
-  border: 1px solid var(--line);
+  /* border: 1px solid var(--line); */
   border-radius: var(--r-lg);
   overflow: hidden;
   background: var(--surface);
@@ -1569,20 +1570,21 @@ img {
 }
 
 .type-card.on {
-  border: 2px solid var(--gold);
+  /* border: 1px solid var(--gold); */
   box-shadow: 0 4px 20px rgba(184, 145, 58, .15)
 }
 
 .type-img {
   width: 100%;
   height: 180px;
-  background: #EDEAE4;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
-  cursor: pointer
+  cursor: pointer;
+  margin: 0 auto;
 }
 
 .type-img i {
@@ -1593,9 +1595,10 @@ img {
 .type-img img {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover
+  width: 80%;
+  height: 90%;
+  object-fit: cover;
+  margin: 0 auto;
 }
 
 .type-img-zoom i {
@@ -1604,11 +1607,12 @@ img {
 }
 
 .type-img:hover .type-body {
-  padding: 16px
+  padding: 20px
 }
 
 .type-body {
-  padding: 20px;
+  padding: 14px;
+  margin-bottom: 10px;
 }
 
 .type-name {
@@ -1653,7 +1657,7 @@ img {
   font-size: 10px;
   font-weight: 700;
   padding: 3px 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   background: rgba(184, 145, 58, 0.92);
   color: #fff;
   border: none;
@@ -1665,8 +1669,10 @@ img {
 /* 타입 상세 패널 */
 .type-detail-panel {
   margin-top: 20px;
-  border: 1.5px solid var(--gold);
-  border-radius: var(--r-xl);
+  /* border: 1px solid var(--gold); */
+  /* border-radius: var(--r-xl); */
+  box-shadow: 0 4px 20px rgba(184, 145, 58, .15);
+  border-radius: 10px;
   background: var(--surface);
   overflow: hidden;
   display: none;
@@ -1678,6 +1684,12 @@ img {
 
 /* 모바일에서 패널 숨김 - 바텀시트 모달 사용 */
 @media (max-width: 768px) {
+
+  #types .type-grid {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
   .type-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2598,7 +2610,7 @@ footer {
 
   .type-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 10px
+    gap: 8px
   }
 
   .tdp-inner {
