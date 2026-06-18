@@ -56,6 +56,20 @@
 
 }
 
+.invest-poster {
+  /* border-radius: var(--r-lg); */
+  overflow: hidden;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.invest-poster img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  display: block;
+}
+
 
 
 /* 스마트생활 슬라이더 (sq3) */
