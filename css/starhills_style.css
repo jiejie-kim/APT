@@ -80,7 +80,7 @@
 }
 
 .event-poster{
-  width: 100%;
+  max-width: 1080px;
   overflow: hidden;
   margin: 0 auto;
 }
