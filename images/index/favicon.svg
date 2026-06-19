@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#fec446"/>
+  <g fill="none" stroke="#0E1E35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- building -->
+    <rect x="9" y="7" width="14" height="19" rx="1.2"/>
+    <!-- windows -->
+    <line x1="12.5" y1="11" x2="12.5" y2="13"/>
+    <line x1="16" y1="11" x2="16" y2="13"/>
+    <line x1="19.5" y1="11" x2="19.5" y2="13"/>
+    <line x1="12.5" y1="15.5" x2="12.5" y2="17.5"/>
+    <line x1="16" y1="15.5" x2="16" y2="17.5"/>
+    <line x1="19.5" y1="15.5" x2="19.5" y2="17.5"/>
+    <line x1="12.5" y1="20" x2="12.5" y2="22"/>
+    <line x1="19.5" y1="20" x2="19.5" y2="22"/>
+    <!-- door -->
+    <rect x="14.5" y="20" width="3" height="6" rx="0.5"/>
+  </g>
+</svg>
