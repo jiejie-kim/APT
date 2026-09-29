@@ -12,19 +12,21 @@
   <meta property="og:image" content="https://yongin-apt.com/images/m_banner_2.jpg" />
   <meta property="og:url" content="https://yongin-apt.com" />
   <link rel="stylesheet" href="css/prugio_style.css" />
-  <link rel="stylesheet" href="css/starhills_style.css" />
+  <link rel="stylesheet" href="css/starhills_style.css?v=20260929" />
   <link rel="stylesheet" as="style" onload="
         this.onload = null;
         this.rel = 'stylesheet';
       " href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
     as="style" onload="this.rel='stylesheet'" />
-  <link rel="icon" type="image/svg+xml" href="images/index/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="images/index/logo_N1.png?v=4">
+  <link rel="apple-touch-icon" href="images/index/apple-touch-icon.png?v=4">
   <noscript>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
   </noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
-  <script src="js/starhills.js" defer></script>
+  <script src="js/starhills.js?v=20260929" defer></script>
 </head>
 
 <body class="starhills">
@@ -918,11 +920,11 @@
             10:00–17:00 / 주말 10:00–18:00 (연중무휴)
           </div>
         </div>
-        <a class="v-btn v-btn-gold" href="tel:1522-5681" onclick="logClick('푸르지오 방문예약')"><i class="ti ti-phone"></i> 방문
+        <a class="v-btn v-btn-gold" href="tel:1522-5681" onclick="logClick('서희스타힐스 방문예약')"><i class="ti ti-phone"></i> 방문
           예약하기</a>
       </div>
       <div class="visit-card">
-        <div class="visit-icon"><i class="ti ti-calendar"></i></div>
+        <div class="visit-icon"><i class="ti ti-gift"></i></div>
         <div>
           <div class="visit-card-title">상담 예약</div>
           <div class="visit-card-desc">
@@ -939,7 +941,11 @@
             <input id="v-phone" class="v-field" type="tel" placeholder="010-0000-0000" />
           </div>
         </div>
-        <button class="v-btn v-btn-gold" onclick="visitSubmit()">
+        <label class="hf-agree hf-agree--dark">
+          <input type="checkbox" id="v-agree" checked />
+          <span>방문예약 및 계약 시 [특별 사은품/상품권] 증정을 위한 정보 등록에 동의합니다.</span>
+        </label>
+        <button class="v-btn v-btn-gold" id="v-submit" onclick="visitSubmit()">
           <i class="ti ti-send"></i> 상담 신청하기
         </button>
       </div>
@@ -1039,10 +1045,24 @@
   </footer>
 
   <!-- FLOATING BAR -->
-  <div class="floating-bar" style="min-width:180px">
-    <a class="fl-btn" href="sms:010-2618-5929?body=안녕하세요, 분양 상담 요청드립니다." onclick="logClick('문자 클릭')"><i
-        class="ti ti-message"></i>문자</a>
-    <a class="fl-btn" href="tel:1522-5681" onclick="logClick('전화 클릭')"><i class="ti ti-phone"></i>전화</a>
+  <div class="floating-bar">
+    <a class="fl-btn" href="sms:010-2707-1243?body=안녕하세요, 분양 상담 요청드립니다. " onclick="logClick('문자 클릭')">
+      <span class="fl-ico fl-ico--sms"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-4 9h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m2 -4h-8a1 1 0 1 0 0 2h8a1 1 0 0 0 0 -2" />
+        </svg></span>문자</a>
+    <!-- 카카오톡 채널 채팅 주소로 바꿔주세요: http://pf.kakao.com/_채널ID/chat -->
+    <a class="fl-btn" href="https://open.kakao.com/me/YongInAPT" target="_blank" rel="noopener"
+      onclick="logClick('카톡 클릭')">
+      <span class="fl-ico fl-ico--kakao"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M5.821 4.91c3.899 -2.765 9.468 -2.539 13.073 .535c3.667 3.129 4.168 8.238 1.152 11.898c-2.841 3.447 -7.965 4.583 -12.231 2.805l-.233 -.101l-4.374 .931l-.04 .006l-.035 .007h-.018l-.022 .005h-.038l-.033 .004l-.021 -.001l-.023 .001l-.033 -.003h-.035l-.022 -.004l-.022 -.002l-.035 -.007l-.034 -.005l-.016 -.004l-.024 -.005l-.049 -.016l-.024 -.005l-.011 -.005l-.022 -.007l-.045 -.02l-.03 -.012l-.011 -.006l-.014 -.006l-.031 -.018l-.045 -.024l-.016 -.011l-.037 -.026l-.04 -.027l-.002 -.004l-.013 -.009l-.043 -.04l-.025 -.02l-.006 -.007l-.056 -.062l-.013 -.014l-.011 -.014l-.039 -.056l-.014 -.019l-.005 -.01l-.042 -.073l-.007 -.012l-.004 -.008l-.007 -.012l-.014 -.038l-.02 -.042l-.004 -.016l-.004 -.01l-.017 -.061l-.007 -.018l-.002 -.015l-.005 -.019l-.005 -.033l-.008 -.042l-.002 -.031l-.003 -.01v-.016l-.004 -.054l.001 -.036l.001 -.023l.002 -.053l.004 -.025v-.019l.008 -.035l.005 -.034l.005 -.02l.004 -.02l.018 -.06l.003 -.013l1.15 -3.45l-.022 -.037c-2.21 -3.747 -1.209 -8.391 2.413 -11.119z" />
+        </svg></span>카톡상담</a>
+    <a class="fl-btn" href="tel:1522-5681" onclick="logClick('전화 클릭')">
+      <span class="fl-ico fl-ico--tel"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" />
+        </svg></span>전화상담</a>
   </div>
 
 </body>

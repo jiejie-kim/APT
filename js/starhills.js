@@ -530,6 +530,10 @@ async function visitSubmit() {
   const phone = document.getElementById("v-phone").value.trim();
   if (!name) { alert("성함을 입력해 주세요."); return; }
   if (phone.replace(/\D/g, "").length < 10) { alert("연락처를 입력해 주세요."); return; }
+  const agree = document.getElementById("v-agree");
+  if (agree && !agree.checked) { alert("정보 등록에 동의해 주세요."); return; }
+  const btn = document.getElementById("v-submit");
+  if (btn) btn.disabled = true; // 중복 접수 방지
   const now = new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
   try {
     await fetch(SCRIPT_URL, {
@@ -538,6 +542,7 @@ async function visitSubmit() {
       body: JSON.stringify({ name, phone, time: now, page: "서희스타힐스 방문상담예약" })
     });
   } catch (e) { }
+  if (btn) btn.disabled = false;
   alert("방문 상담 예약이 완료되었습니다!\n담당자가 곧 연락드리겠습니다.");
   document.getElementById("v-name").value = "";
   document.getElementById("v-phone").value = "";

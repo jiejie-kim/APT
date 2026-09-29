@@ -438,3 +438,55 @@
   }
 
 }
+
+
+/* ── 상담 예약: 동의 체크박스 (index와 동일) ── */
+.hf-agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .65);
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.hf-agree input {
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  accent-color: #d3a032;
+  flex-shrink: 0;
+}
+
+.v-btn:disabled { opacity: .6; cursor: wait }
+
+/* ── 하단 고정 바: 색 아이콘 (index와 동일) ── */
+.floating-bar {
+  max-width: 400px;
+}
+
+.floating-bar .fl-btn {
+  gap: 8px;
+  color: rgba(255, 255, 255, .9);
+}
+
+.fl-ico {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fl-ico svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.fl-ico--sms { background: #22C55E; color: #fff }      /* 문자: 초록 */
+.fl-ico--kakao { background: #FEE500; color: #3A1D1D } /* 카톡: 노랑 */
+.fl-ico--tel { background: #3B82F6; color: #fff }      /* 전화: 파랑 */

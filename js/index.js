@@ -159,42 +159,63 @@ function initPhoneFormat(id) {
   });
 }
 
-/* ── 상담 신청 ── */
-async function mainSubmit() {
-  const name = document.getElementById("m-name").value.trim();
-  const phone = document.getElementById("m-phone").value.trim();
+/* ── 상담 신청 (상단 폼 · 하단 폼 공통) ── */
+async function submitLead({ nameId, phoneId, agreeId, btnId, page }) {
+  const nameEl = document.getElementById(nameId);
+  const phoneEl = document.getElementById(phoneId);
+  const agreeEl = document.getElementById(agreeId);
+  const btn = document.getElementById(btnId);
+  const name = nameEl.value.trim();
+  const phone = phoneEl.value.trim();
+
   if (!name) {
     alert("성함을 입력해 주세요.");
+    nameEl.focus();
     return;
   }
   if (phone.replace(/\D/g, "").length < 10) {
-    alert("연락처를 입력해 주세요.");
+    alert("연락처를 정확히 입력해 주세요.");
+    phoneEl.focus();
     return;
   }
-  const now = new Date().toLocaleString("ko-KR", {
-    timeZone: "Asia/Seoul",
-  });
+  if (agreeEl && !agreeEl.checked) {
+    alert("개인정보 수집·이용에 동의해 주세요.");
+    return;
+  }
+
+  if (btn) btn.disabled = true; // 중복 접수 방지
+  const now = new Date().toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
   try {
     await fetch(SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        phone,
-        time: now,
-        page: "메인페이지",
-      }),
+      body: JSON.stringify({ name, phone, time: now, page }),
     });
   } catch (e) { }
+  if (btn) btn.disabled = false;
+
   alert(
-    "접수 완료!\n담당자가 곧 연락드리겠습니다.\n\n성함: " +
-    name +
-    "\n연락처: " +
-    phone,
+    "접수 완료!\n담당자가 곧 연락드리겠습니다.\n\n성함: " + name + "\n연락처: " + phone,
   );
-  document.getElementById("m-name").value = "";
-  document.getElementById("m-phone").value = "";
+  nameEl.value = "";
+  phoneEl.value = "";
+}
+
+function mainSubmit() {
+  return submitLead({
+    nameId: "m-name", phoneId: "m-phone", agreeId: "m-agree", btnId: "m-submit",
+    page: "메인페이지",
+  });
+}
+
+/* ── 하단 상담폼으로 이동 ── */
+function scrollToForm() {
+  const el = document.getElementById("visit-section");
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 80;
+  window.scrollTo({ top, behavior: "smooth" });
+  setTimeout(() => document.getElementById("m-name")?.focus({ preventScroll: true }), 700);
 }
 
 /* ── DOM 준비 후 실행 ── */
