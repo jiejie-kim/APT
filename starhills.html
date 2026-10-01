@@ -19,6 +19,7 @@
       " href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
     as="style" onload="this.rel='stylesheet'" />
+  <link rel="stylesheet" href="css/booking.css?v=20261001" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="images/index/logo_N1.png?v=4">
   <link rel="apple-touch-icon" href="images/index/apple-touch-icon.png?v=4">
@@ -26,7 +27,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
   </noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
-  <script src="js/starhills.js?v=20260929" defer></script>
+  <script src="js/starhills.js?v=20261001" defer></script>
+  <script src="js/booking.js?v=20261001" defer></script>
 </head>
 
 <body class="starhills">
@@ -942,7 +944,7 @@
             10:00–17:00 / 주말 10:00–18:00 (연중무휴)
           </div>
         </div>
-        <a class="v-btn v-btn-gold" href="tel:1522-5681" onclick="logClick('서희스타힐스 방문예약')"><i class="ti ti-phone"></i> 방문
+        <a class="v-btn v-btn-gold" href="tel:1522-5681" onclick="openBooking('모델하우스 방문 예약하기'); return false;"><i class="ti ti-phone"></i> 방문
           예약하기</a>
       </div>
       <div class="visit-card">
@@ -1011,26 +1013,19 @@
   </div>
 
 
-  <!-- 계약금 팝업 -->
-  <div class="contract-popup-overlay" id="contractPopupOverlay" onclick="closeContractPopup()"></div>
-  <div class="contract-popup" id="contractPopup">
-    <button class="contract-popup-close" onclick="closeContractPopup()"><i class="ti ti-x"></i></button>
-    <div class="contract-popup-icon">⏰</div>
-    <div class="contract-popup-title" style="color: red; font-weight: 800;">95% 계약 완료</div>
-    <div class="contract-popup-price">계약금 <em>1천만원</em></div>
-    <div class="contract-popup-desc">
-      1천만원으로 내 집 마련을 시작하세요.<br>
-      중도금·잔금은 입주 전까지 여유롭게 준비 가능합니다.
-    </div>
-    <div class="contract-popup-tags">
-      <span>✅ 계약금 분양가5%</span>
-      <span>✅ 중도금 대출 가능</span>
-      <span>✅ 전문가 무료 상담</span>
-    </div>
-    <button class="contract-popup-cta" onclick="scrollToContact(); closeContractPopup()">
-      <i class="ti ti-send"></i> 무료 상담 신청하기
-    </button>
-    <button class="contract-popup-skip" onclick="closeContractPopup()">괜찮아요, 더 볼게요</button>
+  <!-- ══ 첫 화면 이미지 팝업 ══
+       이미지: images/starhills/popup.webp (세로형 권장, 예: 900×1200)
+       이미지 파일이 없으면 팝업이 뜨지 않습니다. -->
+  <div class="ip-overlay" id="imgPopupOverlay" onclick="closeImgPopup()"></div>
+  <div class="ip" id="imgPopup" role="dialog" aria-modal="true" aria-label="서희스타힐스 분양 안내">
+    <button class="ip-close" type="button" onclick="closeImgPopup()" aria-label="닫기">✕</button>
+    <a class="ip-img" href="#" onclick="closeImgPopup(); openBooking('첫 화면 팝업'); return false;">
+      <img src="images/starhills/popup.webp" alt="용인 서희스타힐스 분양 안내 - 계약금 1천만원">
+    </a>
+    <label class="ip-today">
+      <input type="checkbox" id="ipToday" />
+      <span>오늘 하루 보지 않기</span>
+    </label>
   </div>
 
   <!-- 갤러리 라이트박스 -->
@@ -1068,23 +1063,72 @@
 
   <!-- FLOATING BAR -->
   <div class="floating-bar">
+    <a class="fl-btn" href="#" onclick="openBooking('하단 바'); return false;">
+      <span class="fl-ico fl-ico--visit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 2a1 1 0 0 1 .993 .883l.007 .117v1h1a3 3 0 0 1 2.995 2.824l.005 .176v12a3 3 0 0 1 -2.824 2.995l-.176 .005h-12a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-12a3 3 0 0 1 2.824 -2.995l.176 -.005h1v-1a1 1 0 0 1 1.993 -.117l.007 .117v1h6v-1a1 1 0 0 1 1 -1zm3 7h-14v9.625c0 .705 .386 1.286 .883 1.366l.117 .009h12c.513 0 .936 -.53 .993 -1.215l.007 -.16v-9.625z" /><path d="M12 12a1 1 0 0 1 .993 .883l.007 .117v3a1 1 0 0 1 -1.993 .117l-.007 -.117v-2a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /></svg></span>방문예약</a>
     <a class="fl-btn" href="sms:010-2707-1243?body=안녕하세요, 분양 상담 요청드립니다. " onclick="logClick('문자 클릭')">
       <span class="fl-ico fl-ico--sms"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path
             d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-4 9h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m2 -4h-8a1 1 0 1 0 0 2h8a1 1 0 0 0 0 -2" />
-        </svg></span>문자</a>
-    <!-- 카카오톡 채널 채팅 주소로 바꿔주세요: http://pf.kakao.com/_채널ID/chat -->
-    <!-- <a class="fl-btn" href="https://open.kakao.com/me/YongInAPT" target="_blank" rel="noopener"
-      onclick="logClick('카톡 클릭')">
-      <span class="fl-ico fl-ico--kakao"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path
-            d="M5.821 4.91c3.899 -2.765 9.468 -2.539 13.073 .535c3.667 3.129 4.168 8.238 1.152 11.898c-2.841 3.447 -7.965 4.583 -12.231 2.805l-.233 -.101l-4.374 .931l-.04 .006l-.035 .007h-.018l-.022 .005h-.038l-.033 .004l-.021 -.001l-.023 .001l-.033 -.003h-.035l-.022 -.004l-.022 -.002l-.035 -.007l-.034 -.005l-.016 -.004l-.024 -.005l-.049 -.016l-.024 -.005l-.011 -.005l-.022 -.007l-.045 -.02l-.03 -.012l-.011 -.006l-.014 -.006l-.031 -.018l-.045 -.024l-.016 -.011l-.037 -.026l-.04 -.027l-.002 -.004l-.013 -.009l-.043 -.04l-.025 -.02l-.006 -.007l-.056 -.062l-.013 -.014l-.011 -.014l-.039 -.056l-.014 -.019l-.005 -.01l-.042 -.073l-.007 -.012l-.004 -.008l-.007 -.012l-.014 -.038l-.02 -.042l-.004 -.016l-.004 -.01l-.017 -.061l-.007 -.018l-.002 -.015l-.005 -.019l-.005 -.033l-.008 -.042l-.002 -.031l-.003 -.01v-.016l-.004 -.054l.001 -.036l.001 -.023l.002 -.053l.004 -.025v-.019l.008 -.035l.005 -.034l.005 -.02l.004 -.02l.018 -.06l.003 -.013l1.15 -3.45l-.022 -.037c-2.21 -3.747 -1.209 -8.391 2.413 -11.119z" />
-        </svg></span>카톡상담</a> -->
+        </svg></span>문자상담</a>
     <a class="fl-btn" href="tel:1522-5681" onclick="logClick('전화 클릭')">
       <span class="fl-ico fl-ico--tel"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path
             d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" />
         </svg></span>전화상담</a>
+  </div>
+
+
+  <!-- ══ 예약 인원 알림 (숫자는 js/booking.js 맨 위에서 수정) ══ -->
+  <div class="bk-toast" id="bkToast" role="status">
+    <button class="bk-toast-text" type="button" onclick="openBooking('알림')">현재까지 총 <b id="bkCount">0</b>명 예약신청 완료했습니다!</button>
+    <button class="bk-toast-x" type="button" onclick="closeBkToast()" aria-label="닫기">✕</button>
+  </div>
+
+  <!-- ══ 방문예약 창 (아래에서 올라옴) ══ -->
+  <div class="bk-overlay" id="bkOverlay" onclick="closeBooking()"></div>
+  <div class="bk-sheet" id="bkSheet" data-page="서희스타힐스" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+    <div class="bk-handle"></div>
+    <button class="bk-close" type="button" onclick="closeBooking()" aria-label="닫기">✕</button>
+    <h2 class="bk-title" id="bkTitle">방문예약신청</h2>
+    <p class="bk-sub">원하시는 날짜와 시간을 남겨주시면 확인 후 연락드립니다.</p>
+
+    <input class="bk-field" id="bk-name" type="text" placeholder="성함" autocomplete="name" />
+    <input class="bk-field" id="bk-phone" type="tel" inputmode="numeric" placeholder="연락처 (숫자만 입력)" autocomplete="tel" />
+    <div class="bk-row">
+      <div>
+        <label class="bk-lbl" for="bk-date">방문 날짜</label>
+        <input class="bk-field" id="bk-date" type="date" />
+      </div>
+      <div>
+        <label class="bk-lbl" for="bk-time">방문 시간</label>
+        <select class="bk-field" id="bk-time">
+          <option value="">시간 선택</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+        </select>
+      </div>
+    </div>
+    <textarea class="bk-field" id="bk-memo" placeholder="문의 내용 (선택)"></textarea>
+
+    <label class="bk-agree">
+      <input type="checkbox" id="bk-agree" />
+      <span>개인정보 수집·이용에 동의합니다.</span>
+      <button class="bk-terms-btn" type="button" onclick="event.preventDefault(); toggleBkTerms()">[자세히]</button>
+    </label>
+    <div class="bk-terms" id="bkTerms" hidden>
+      · 수집 항목: 성함, 연락처, 방문 희망 일시, 문의 내용<br />
+      · 이용 목적: 모델하우스 방문 예약 및 분양 상담 안내<br />
+      · 보유 기간: 상담 완료 후 1년 (동의 철회 요청 시 즉시 파기)<br />
+      · 동의를 거부할 수 있으나, 거부 시 예약 접수가 어렵습니다.
+    </div>
+
+    <button class="bk-submit" id="bk-submit" type="button" onclick="submitBooking()">예약신청접수</button>
   </div>
 
 </body>

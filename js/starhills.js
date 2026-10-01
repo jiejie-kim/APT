@@ -627,7 +627,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // 전체 팝업: 페이지 진입 2초 후 표시
-  setTimeout(() => openContractPopup(), 2000);
+  // 첫 화면 팝업: 이미지 팝업으로 교체 (js/booking.js의 openImgPopup)
+  setTimeout(() => { if (typeof openImgPopup === "function") openImgPopup(); }, 1200);
 
   // 미니배너: 타입선택 섹션 진입 시 표시, 벗어나면 숨김
   const typesForBanner = document.getElementById("types");
