@@ -8,11 +8,11 @@
   <meta name="description" content="마지막 3억대 대단지 프리미엄 아파트 분양. SK하이닉스+삼성반도체메가클러스터 최인접" />
   <meta name="keywords" content="용인 분양, 용인 아파트, 3억대 아파트, 서희스타힐스, 양지서희스타힐스, SK하이닉스, 삼성반도체메가클러스터" />
   <meta property="og:title" content="용인 서희스타힐스 아파트 분양" />
-  <meta property="og:description" content="마지막 3억대 프리미엄 아파트. 반도체 클러스터 핵심 입지 아파트 분양 정보." />
-  <meta property="og:image" content="https://yongin-apt.com/images/m_banner_2.jpg" />
+  <meta property="og:description" content="마지막 3-4억대 프리미엄 아파트. 반도체 클러스터 핵심 입지 아파트 (⏰95% 분양 완료)." />
+  <meta property="og:image" content="https://yongin-apt.com/images/starhills/main_0.webp" />
   <meta property="og:url" content="https://yongin-apt.com" />
   <link rel="stylesheet" href="css/prugio_style.css" />
-  <link rel="stylesheet" href="css/starhills_style.css?v=20260929" />
+  <link rel="stylesheet" href="css/starhills_style.css?v=20261001" />
   <link rel="stylesheet" as="style" onload="
         this.onload = null;
         this.rel = 'stylesheet';
@@ -38,7 +38,7 @@
       <a href="#">분양 일정</a>
       <a href="#">회사 소개</a>
     </div> -->
-    <a class="nav-cta" href="tel:1522-5681" onclick="logClick('전화 클릭 - 푸르지오')"><i class="ti ti-phone"></i>
+    <a class="nav-cta" href="tel:1522-5681" onclick="logClick('전화 클릭 - 서희스타힐스')"><i class="ti ti-phone"></i>
       1522-5681</a>
   </nav>
 
@@ -55,6 +55,28 @@
     <button class="sub-btn" onclick="goTo('modelhouse')">모델하우스</button>
     <button class="sub-btn" onclick="goTo('contact')">상담신청</button>
   </div>
+
+  <!-- ── 모바일 전용 히어로 (사진·정보 분리형) : 768px 이하에서만 보임 ── -->
+  <section class="sh-mhero">
+    <div class="sh-mhero-photo">
+      <img src="images/starhills/main_0.webp" alt="용인 서희스타힐스 단지 전경">
+      <span class="sh-mhero-badge"><i></i>일반 분양</span>
+    </div>
+    <div class="sh-mhero-panel">
+      <h1 class="sh-mhero-name">용인 서희스타힐스</h1>
+      <div class="sh-mhero-addr"><i class="ti ti-map-pin"></i>경기도 용인시 처인구 양지면</div>
+      <div class="sh-mhero-bar"></div>
+      <div class="sh-mhero-tags">
+        <span class="sh-tag sh-tag--gold">용인 마지막 3-4억대</span>
+        <span class="sh-tag sh-tag--line">일반 분양</span>
+        <span class="sh-tag">1254세대 대단지</span>
+        <span class="sh-tag">SK하이닉스 반도체클러스터</span>
+        <span class="sh-tag">삼성전자 반도체클러스터</span>
+        <span class="sh-tag">쾌속 교통 개통</span>
+        <span class="sh-tag">안심 교육 통학</span>
+      </div>
+    </div>
+  </section>
 
   <!-- ── 메인 사진 히어로 ── -->
   <div class="d-hero-img">
@@ -113,7 +135,7 @@
           <span class="pc-key">입주 예정</span><span class="pc-val">2030년 08월</span>
         </div>
         <div class="pc-contract-hint">💡 계약금(1차+2차)=5% · 중도금 대출 가능</div>
-        <div class="pc-dday">⏰선착순 분양중</div>
+        <div class="pc-dday">⏰ 95% 분양완료</div>
         <button class="pc-btn-primary" onclick="scrollToContact()">
           분양 상담 신청하기
         </button>
@@ -993,8 +1015,8 @@
   <div class="contract-popup-overlay" id="contractPopupOverlay" onclick="closeContractPopup()"></div>
   <div class="contract-popup" id="contractPopup">
     <button class="contract-popup-close" onclick="closeContractPopup()"><i class="ti ti-x"></i></button>
-    <div class="contract-popup-icon">💰</div>
-    <div class="contract-popup-title">지금 바로 시작할 수 있어요!</div>
+    <div class="contract-popup-icon">⏰</div>
+    <div class="contract-popup-title" style="color: red; font-weight: 800;">95% 계약 완료</div>
     <div class="contract-popup-price">계약금 <em>1천만원</em></div>
     <div class="contract-popup-desc">
       1천만원으로 내 집 마련을 시작하세요.<br>
@@ -1052,12 +1074,12 @@
             d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-4 9h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m2 -4h-8a1 1 0 1 0 0 2h8a1 1 0 0 0 0 -2" />
         </svg></span>문자</a>
     <!-- 카카오톡 채널 채팅 주소로 바꿔주세요: http://pf.kakao.com/_채널ID/chat -->
-    <a class="fl-btn" href="https://open.kakao.com/me/YongInAPT" target="_blank" rel="noopener"
+    <!-- <a class="fl-btn" href="https://open.kakao.com/me/YongInAPT" target="_blank" rel="noopener"
       onclick="logClick('카톡 클릭')">
       <span class="fl-ico fl-ico--kakao"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path
             d="M5.821 4.91c3.899 -2.765 9.468 -2.539 13.073 .535c3.667 3.129 4.168 8.238 1.152 11.898c-2.841 3.447 -7.965 4.583 -12.231 2.805l-.233 -.101l-4.374 .931l-.04 .006l-.035 .007h-.018l-.022 .005h-.038l-.033 .004l-.021 -.001l-.023 .001l-.033 -.003h-.035l-.022 -.004l-.022 -.002l-.035 -.007l-.034 -.005l-.016 -.004l-.024 -.005l-.049 -.016l-.024 -.005l-.011 -.005l-.022 -.007l-.045 -.02l-.03 -.012l-.011 -.006l-.014 -.006l-.031 -.018l-.045 -.024l-.016 -.011l-.037 -.026l-.04 -.027l-.002 -.004l-.013 -.009l-.043 -.04l-.025 -.02l-.006 -.007l-.056 -.062l-.013 -.014l-.011 -.014l-.039 -.056l-.014 -.019l-.005 -.01l-.042 -.073l-.007 -.012l-.004 -.008l-.007 -.012l-.014 -.038l-.02 -.042l-.004 -.016l-.004 -.01l-.017 -.061l-.007 -.018l-.002 -.015l-.005 -.019l-.005 -.033l-.008 -.042l-.002 -.031l-.003 -.01v-.016l-.004 -.054l.001 -.036l.001 -.023l.002 -.053l.004 -.025v-.019l.008 -.035l.005 -.034l.005 -.02l.004 -.02l.018 -.06l.003 -.013l1.15 -3.45l-.022 -.037c-2.21 -3.747 -1.209 -8.391 2.413 -11.119z" />
-        </svg></span>카톡상담</a>
+        </svg></span>카톡상담</a> -->
     <a class="fl-btn" href="tel:1522-5681" onclick="logClick('전화 클릭')">
       <span class="fl-ico fl-ico--tel"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path
