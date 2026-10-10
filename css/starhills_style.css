@@ -81,9 +81,10 @@
 
 @media (max-width: 768px) {
   .sh-video {
-    width: 78%;
-    /* 휴대폰에서 화면 폭의 78% */
-    max-height: 78svh;
+    width: 92%;
+    /* 휴대폰에서 화면 폭의 92% (더 크게: 숫자 키우기) */
+    max-width: none;
+    max-height: 88svh;
     /* 화면 높이를 넘지 않게 */
     margin-bottom: 24px;
   }
@@ -116,6 +117,7 @@
   max-width: 1080px;
   overflow: hidden;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 

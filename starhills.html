@@ -12,7 +12,7 @@
   <meta property="og:image" content="https://yongin-apt.com/images/starhills/main_0.webp" />
   <meta property="og:url" content="https://yongin-apt.com" />
   <link rel="stylesheet" href="css/prugio_style.css" />
-  <link rel="stylesheet" href="css/starhills_style.css?v=20261010" />
+  <link rel="stylesheet" href="css/starhills_style.css?v=20261010b" />
   <link rel="stylesheet" as="style" onload="
         this.onload = null;
         this.rel = 'stylesheet';
@@ -191,8 +191,19 @@
 
     <!-- 소개 영상 (mp4 파일. #t=0.1 = 첫 장면을 표지로 보여줌) -->
     <div class="sh-video fade-in">
-      <video src="images/starhills/stahills_video.mp4#t=54" controls playsinline muted
+      <!-- #t=54 : 재생 전에는 54초(마지막) 장면을 표지처럼 보여줌. 재생하면 처음부터 시작 -->
+      <video id="shVideo" src="images/starhills/stahills_video.mp4#t=54" controls playsinline
         preload="metadata"></video>
+      <script>
+        (function () {
+          var v = document.getElementById("shVideo");
+          if (!v) return;
+          var first = true;
+          v.addEventListener("play", function () {
+            if (first) { first = false; v.currentTime = 0; } // 처음 재생할 때만 맨 앞으로
+          });
+        })();
+      </script>
     </div>
 
 
@@ -929,16 +940,16 @@
     </section>
   </div>
 
-  <div class="event-poster">
+  <!-- <div class="event-poster">
     <img src="images/banner_3.webp" alt="증정이벤트포스터">
-  </div>
+  </div> -->
 
   <div class="event-poster">
     <img src="images/starhills/invest poster_3.webp" alt="투자가치 포스터3">
   </div>
 
   <div class="event-poster">
-    <img src="images/starhills/event_banner.webp" alt="event">
+    <img src="images/starhills/poster_2.jpeg" alt="event">
   </div>
 
 
