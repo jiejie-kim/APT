@@ -53,7 +53,40 @@
     height: 100% !important;
     gap: 4px;
   }
+}
 
+/* 소개 영상 (숏츠 세로형 9:16) */
+.sh-video {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  /* PC에서 영상 최대 너비 */
+  margin: 0 auto 32px;
+  /* 가운데 정렬 */
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.sh-video video,
+.sh-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .sh-video {
+    width: 78%;
+    /* 휴대폰에서 화면 폭의 78% */
+    max-height: 78svh;
+    /* 화면 높이를 넘지 않게 */
+    margin-bottom: 24px;
+  }
 }
 
 .invest-poster {
@@ -72,14 +105,14 @@
 }
 
 @media (max-width: 768px) {
-  .invest-poster{
+  .invest-poster {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
   }
 }
 
-.event-poster{
+.event-poster {
   max-width: 1080px;
   overflow: hidden;
   margin: 0 auto;
@@ -459,7 +492,10 @@
   flex-shrink: 0;
 }
 
-.v-btn:disabled { opacity: .6; cursor: wait }
+.v-btn:disabled {
+  opacity: .6;
+  cursor: wait
+}
 
 /* ── 하단 고정 바: 색 아이콘 (index와 동일) ── */
 .floating-bar {
@@ -487,26 +523,47 @@
   display: block;
 }
 
-.fl-ico--sms { background: #22C55E; color: #fff }      /* 문자: 초록 */
-.fl-ico--kakao { background: #FEE500; color: #3A1D1D } /* 카톡: 노랑 */
-.fl-ico--tel { background: #3B82F6; color: #fff }      /* 전화: 파랑 */
+.fl-ico--sms {
+  background: #22C55E;
+  color: #fff
+}
+
+/* 문자: 초록 */
+.fl-ico--kakao {
+  background: #FEE500;
+  color: #3A1D1D
+}
+
+/* 카톡: 노랑 */
+.fl-ico--tel {
+  background: #3B82F6;
+  color: #fff
+}
+
+/* 전화: 파랑 */
 
 
 /* ══════════════════════════════════════
    모바일 히어로 (사진·정보 분리형)
    PC(769px 이상)에서는 기존 히어로 그대로
    ══════════════════════════════════════ */
-.sh-mhero { display: none; }
+.sh-mhero {
+  display: none;
+}
 
 @media (max-width: 768px) {
+
   /* 기존 사진 히어로는 모바일에서 숨기고 새 블록으로 대체 */
-  .starhills .d-hero-img { display: none !important; }
+  .starhills .d-hero-img {
+    display: none !important;
+  }
 
   .sh-mhero {
     display: block;
     background: #0E1E35;
     color: #fff;
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;  /* 고딕 고정 */
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+    /* 고딕 고정 */
   }
 
   .sh-mhero-photo {
@@ -519,7 +576,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 30% 90%;  /* 사진 위치: 두 번째 숫자를 바꾸면 위아래 조절 */
+    object-position: 30% 90%;
+    /* 사진 위치: 두 번째 숫자를 바꾸면 위아래 조절 */
     display: block;
   }
 
@@ -527,7 +585,9 @@
   .sh-mhero-photo::after {
     content: '';
     position: absolute;
-    left: 0; right: 0; bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 60px;
     background: linear-gradient(180deg, rgba(14, 30, 53, 0), #0E1E35);
   }
@@ -581,7 +641,9 @@
     color: rgba(255, 255, 255, .7);
   }
 
-  .sh-mhero-addr i { font-size: 15px }
+  .sh-mhero-addr i {
+    font-size: 15px
+  }
 
   .sh-mhero-bar {
     width: 28px;
@@ -617,5 +679,37 @@
     background: rgba(242, 196, 107, .15);
     border: 1px solid rgba(242, 196, 107, .35);
     color: #F2C46B;
+  }
+}
+
+
+/* ══════════════════════════════════════
+   PC: 왼쪽 숏츠 영상 + 오른쪽 투자가치 분석
+   (모바일은 기존처럼 위아래)
+   ══════════════════════════════════════ */
+@media (min-width: 769px) {
+  .sh-invest-row {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 32px;
+  }
+
+  .sh-invest-row .sh-video {
+    flex: 0 0 340px;           /* 영상 너비 (두 곳 같이 바꾸기) */
+    max-width: 340px;
+    margin: 0;
+  }
+
+  .sh-invest-row .invest-section {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+  }
+
+  /* 옆 공간이 좁아지므로 분석 3개 항목을 세로로 쌓기 */
+  .sh-invest-row .invest-grid {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
